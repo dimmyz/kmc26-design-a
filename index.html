@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Медиаконференция KINOR 2026 — дизайн-концепт «Струна»</title>
+<meta name="description" content="Медиа. Миссия. Движение. Практическая конференция для тех, кто создаёт медиа и хочет через них достигать людей. 19–21 ноября 2026, Baptist Village, Израиль.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0B1A22">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="KINOR MediaConference 2026">
+<meta property="og:title" content="Медиаконференция KINOR 2026 — Медиа. Миссия. Движение.">
+<meta property="og:description" content="19–21 ноября 2026 · Baptist Village, Израиль. Практическая конференция для медиакоманд, пасторов, авторов и креаторов. Дизайн-концепт.">
+<meta property="og:url" content="https://dimmyz.github.io/kmc26-design-a/">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KINOR 2026: вертикальные струны на тёмно-бирюзовом фоне, одна тёплая струна, заголовок «Медиа. Миссия. Движение.»">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Медиаконференция KINOR 2026 — Медиа. Миссия. Движение.">
+<meta name="twitter:description" content="19–21 ноября 2026 · Baptist Village, Израиль. Дизайн-концепт.">
+<meta name="twitter:image" content="https://dimmyz.github.io/kmc26-design-a/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1A22'/%3E%3Cg stroke-linecap='round' stroke-width='7' fill='none'%3E%3Cline x1='17' y1='22' x2='17' y2='42' stroke='%2337C4AA'/%3E%3Cpath d='M32 10 Q41 32 32 54' stroke='%23F2B35B'/%3E%3Cline x1='47' y1='22' x2='47' y2='42' stroke='%2337C4AA'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+/* KINOR MediaConference 2026 — Direction A «Струна». Design concept, not production. */
+:root{
+  --night:#0B1A22; --deep:#10262F; --deep-2:#163847;
+  --teal:#37C4AA; --teal-ink:#0B7263; --lamp:#F2B35B;
+  --stone:#EDF0EB; --stone-2:#E1E6E0; --ink:#0D1B21; --ink-2:#44555B;
+  --on-night:#EDF0EB; --on-night-2:rgba(237,240,235,.72); --hair-night:rgba(237,240,235,.12);
+  --f-sans:"Onest", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --gutter:clamp(16px,4vw,56px); --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--night);color:var(--on-night);font:400 17px/1.6 var(--f-sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+h1,h2,h3{text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--f-sans);letter-spacing:.18em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 16px/1 var(--f-sans);text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+.btn-primary{background:var(--teal);color:var(--night)}
+.btn-primary:hover{background:#5bd6bf}
+.btn-ghost{border-color:var(--hair-night);color:var(--on-night)}
+.btn-ghost:hover{border-color:var(--teal)}
+
+.draft{position:relative;z-index:6;background:var(--lamp);color:var(--night);text-align:center;font:600 12px/1.4 var(--f-sans);letter-spacing:.06em;padding:8px 16px}
+
+.top{position:absolute;left:0;right:0;z-index:5}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo svg{display:block}
+.logo-word{display:grid;gap:5px}
+.logo-word b{font:700 21px/1 var(--f-sans);letter-spacing:.2em}
+.logo-word small{font:500 9.5px/1 var(--f-sans);letter-spacing:.2em;color:var(--on-night-2);text-transform:uppercase}
+.nav{display:flex;gap:28px;font-size:14px;color:var(--on-night-2)}
+.nav a{text-decoration:none}.nav a:hover{color:var(--on-night)}
+.top .btn{min-height:42px;padding:0 18px;font-size:14px}
+
+.hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 70% 40%,#123341 0%,var(--night) 62%)}
+#strings{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:2;padding-block:168px 96px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end}
+.hero-copy{display:grid;gap:28px}
+.hero .eyebrow{color:var(--teal)}
+.hero h1{font:600 clamp(46px,7.4vw,104px)/.98 var(--f-sans);letter-spacing:-.025em}
+.hero h1 span{display:block}
+.hero .en{font:500 15px/1 var(--f-sans);letter-spacing:.22em;text-transform:uppercase;color:var(--on-night-2)}
+.meta{display:flex;flex-wrap:wrap;gap:10px 28px;font:500 16px/1.3 var(--f-sans)}
+.meta span{display:flex;gap:10px;align-items:center}
+.meta i{width:7px;height:7px;border-radius:50%;background:var(--lamp);display:inline-block}
+.lead{max-width:56ch;color:var(--on-night-2);font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.one{position:absolute;top:44%;z-index:3;display:grid;gap:6px;max-width:240px}
+.one em{font:italic 500 30px/1.1 var(--f-serif);color:var(--lamp);white-space:nowrap}
+.one small{font-size:13px;color:var(--on-night-2);letter-spacing:.06em}
+
+section{padding-block:clamp(72px,10vw,140px)}
+.light{background:var(--stone);color:var(--ink)}
+.light .eyebrow{color:var(--teal-ink)}
+.sec-head{display:grid;gap:18px;margin-bottom:56px;max-width:760px}
+.h2{font:600 clamp(34px,4.6vw,60px)/1.04 var(--f-sans);letter-spacing:-.02em}
+
+.human{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:start}
+.human h2{font:italic 500 clamp(52px,7.6vw,112px)/.92 var(--f-serif);letter-spacing:-.02em}
+.human h2 span{display:block;color:var(--teal-ink)}
+.human .body{display:grid;gap:28px;padding-top:18px}
+.human .body p{font-size:19px;color:var(--ink-2);max-width:48ch}
+.triad{display:grid;gap:2px;border-left:2px solid var(--lamp);padding-left:20px}
+.triad span{font:600 20px/1.45 var(--f-sans)}
+.verse{font:italic 400 24px/1.35 var(--f-serif);color:var(--ink)}
+.verse small{display:block;font:500 13px/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);margin-top:10px;font-style:normal}
+
+.together{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,6vw,96px);align-items:center}
+.together .en{color:var(--teal);font:600 14px/1 var(--f-sans);letter-spacing:.2em;text-transform:uppercase}
+.together p{color:var(--on-night-2);font-size:18px;max-width:50ch}
+.together .stack{display:grid;gap:22px}
+.chord{width:100%;height:auto;display:block}
+
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;list-style:none;margin:0;padding:0}
+.roles li{display:grid;gap:6px;padding:22px 0;border-top:1px solid rgba(13,27,33,.14)}
+.roles li b{font:600 19px/1.3 var(--f-sans)}
+.roles li span{font-size:15.5px;color:var(--ink-2)}
+
+.path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.step{position:relative;display:grid;gap:14px;padding-top:44px;align-content:start}
+.step::before{content:"";position:absolute;top:10px;left:0;right:-24px;height:2px;background:var(--teal);opacity:.55}
+.step:last-child::before{right:0}
+.step::after{content:"";position:absolute;top:3px;left:0;width:16px;height:16px;border-radius:50%;background:var(--night);border:2px solid var(--teal)}
+.step .eyebrow{color:var(--teal)}
+.step h3{font:600 30px/1.1 var(--f-sans)}
+.step p{color:var(--on-night-2)}
+
+.topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.topic{background:var(--deep);border:1px solid var(--hair-night);border-radius:18px;padding:26px;display:grid;gap:10px;align-content:start}
+.topic h3{font:600 20px/1.25 var(--f-sans)}
+.topic p{font-size:15.5px;color:var(--on-night-2)}
+
+.speakers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.sp{display:grid;gap:14px;align-content:start}
+.sp .ph{aspect-ratio:4/5;max-width:100%;border-radius:18px;background:
+  repeating-linear-gradient(90deg,rgba(55,196,170,0) 0 17px,rgba(55,196,170,.22) 17px 18px),
+  linear-gradient(160deg,#1c4150,#0d212a);position:relative;overflow:hidden}
+.sp .ph::after{content:attr(data-note);position:absolute;left:16px;bottom:14px;right:16px;font:500 12px/1.35 var(--f-sans);color:var(--on-night-2)}
+.sp h3{font:600 21px/1.2 var(--f-sans)}
+.sp p{font-size:15px;color:var(--ink-2)}
+.tag{justify-self:start;font:600 11px/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;border-radius:999px;background:var(--stone-2);color:var(--teal-ink)}
+
+.quote{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:48px;align-items:end}
+.quote blockquote{margin:0;font:italic 500 clamp(32px,4vw,52px)/1.12 var(--f-serif);color:var(--on-night)}
+.quote blockquote::before{content:"«";color:var(--lamp)}
+.quote blockquote::after{content:"»";color:var(--lamp)}
+.quote .who{display:grid;gap:6px;font-size:15px;color:var(--on-night-2)}
+.quote .who b{color:var(--on-night);font-weight:600}
+.placeholder{font:500 12px/1.3 var(--f-sans);color:var(--lamp);letter-spacing:.06em}
+
+.days{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid rgba(13,27,33,.16)}
+.day{padding:28px 28px 28px 0;display:grid;gap:10px;align-content:start}
+.day+.day{padding-left:28px;border-left:1px solid rgba(13,27,33,.16)}
+.day .d{font:600 64px/1 var(--f-sans);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.day .w{font:600 13px/1 var(--f-sans);letter-spacing:.14em;text-transform:uppercase;color:var(--teal-ink)}
+.day p{color:var(--ink-2)}
+.venue{margin-top:48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;font-size:18px}
+.venue b{font-weight:600}
+
+.faq{display:grid;gap:0;max-width:880px}
+.faq details{border-top:1px solid var(--hair-night)}
+.faq details:last-child{border-bottom:1px solid var(--hair-night)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:24px;padding:22px 0;font:600 19px/1.35 var(--f-sans)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--teal);font-weight:500;font-size:26px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 24px;color:var(--on-night-2);max-width:68ch}
+
+.join{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:start}
+.join h2{font:600 clamp(40px,5.6vw,76px)/1 var(--f-sans);letter-spacing:-.02em;color:var(--ink)}
+.join p{color:var(--ink-2);font-size:18px;max-width:46ch;margin-top:22px}
+form{display:grid;gap:16px;background:var(--night);color:var(--on-night);border-radius:22px;padding:28px}
+label{display:grid;gap:8px;font:500 14px/1 var(--f-sans);color:var(--on-night-2)}
+input,select{font:400 16px/1 var(--f-sans);color:var(--on-night);background:var(--deep);border:1px solid var(--hair-night);border-radius:12px;height:50px;padding:0 14px}
+input:focus-visible,select:focus-visible{outline:2px solid var(--teal);outline-offset:1px}
+.note{font-size:13px;line-height:1.5;color:var(--on-night-2)}
+.done{display:none;gap:10px}
+form.sent .fields{display:none}
+form.sent .done{display:grid}
+.done b{font:600 22px/1.3 var(--f-sans)}
+.fields{display:grid;gap:16px}
+
+footer{border-top:1px solid var(--hair-night);padding-block:40px;font-size:14px;color:var(--on-night-2)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+footer .lineage{display:flex;gap:10px;align-items:center}
+
+@media (max-width:900px){
+  .nav{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-block:128px 64px}
+  .one{position:static;margin-top:4px}
+  .sp .ph{aspect-ratio:16/10}
+  .human,.together,.quote,.join{grid-template-columns:1fr}
+  .roles{grid-template-columns:1fr}
+  .path,.speakers,.days,.topics{grid-template-columns:1fr}
+  .step::before{right:0}
+  .day+.day{padding-left:0;border-left:0;border-top:1px solid rgba(13,27,33,.16)}
+  .logo-word small{display:none}
+}
+@media (max-width:480px){ .top .btn{min-height:38px;padding:0 14px;font-size:13px} .logo-word b{font-size:17px} .lead{font-size:17px} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} }
+</style>
+</head>
+<body>
+
+<div class="draft" role="note">Дизайн-концепт «Струна» · черновик для обсуждения, не официальная страница конференции</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="KINOR Медиаконференция 2026">
+      <svg width="40" height="40" viewBox="0 0 64 64" aria-hidden="true">
+        <g stroke-linecap="round" stroke-width="5" fill="none">
+          <line x1="8"  y1="26" x2="8"  y2="38" stroke="#37C4AA"/>
+          <line x1="16" y1="19" x2="16" y2="45" stroke="#37C4AA"/>
+          <line x1="24" y1="12" x2="24" y2="52" stroke="#37C4AA"/>
+          <path d="M32 5 Q40 32 32 59" stroke="#F2B35B"/>
+          <line x1="40" y1="12" x2="40" y2="52" stroke="#37C4AA"/>
+          <line x1="48" y1="19" x2="48" y2="45" stroke="#37C4AA"/>
+          <line x1="56" y1="26" x2="56" y2="38" stroke="#37C4AA"/>
+        </g>
+      </svg>
+      <span class="logo-word"><b>KINOR</b><small>Медиаконференция 2026</small></span>
+    </a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#about">О конференции</a><a href="#who">Для кого</a><a href="#format">Формат</a><a href="#program">Программа</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary" href="#join">Подтвердить интерес</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" style="padding:0">
+  <canvas id="strings" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Медиаконференция KINOR 2026</p>
+      <h1><span>Медиа.</span><span>Миссия.</span><span>Движение.</span></h1>
+      <p class="en">Media · Mission · Movement</p>
+      <div class="meta"><span><i></i>19–21 ноября 2026</span><span>Baptist Village, Израиль (Кфар-Баптистим)</span></div>
+      <p class="lead">Практическая конференция для тех, кто создаёт медиа и хочет через них достигать людей. Церковные медиакоманды, пасторы и лидеры, авторы, блогеры и независимые проекты встретятся, чтобы учиться, делиться опытом и искать новые способы живого общения и сотрудничества.</p>
+      <div class="cta"><a class="btn btn-primary" href="#join">Подтвердить интерес</a><a class="btn btn-ghost" href="#program">Сохранить даты</a></div>
+    </div>
+    <div class="one" aria-hidden="true"><em>за экраном — человек</em><small>Audience of One</small></div>
+  </div>
+</section>
+
+<section class="light" id="about">
+  <div class="wrap human">
+    <h2>За экраном —<span>человек</span></h2>
+    <div class="body">
+      <p class="eyebrow">Audience of One</p>
+      <p>За каждым просмотром, комментарием и подпиской стоит конкретный человек. Мы хотим учиться создавать медиа не ради цифр самих по себе, а ради настоящей встречи, разговора и следующего шага человека к Богу.</p>
+      <div class="triad"><span>Один человек.</span><span>Одна история.</span><span>Один следующий шаг.</span></div>
+      <p class="verse">«…пойдёт за пропавшею, пока не найдёт её»<small>Луки 15:4</small></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap together">
+    <div class="stack">
+      <p class="en">Meet · Connect · Collaborate</p>
+      <h2 class="h2">Ты не один</h2>
+      <p>Иногда кажется, что ты один такой человек в своей церкви, команде или городе — тот, кто верит, что через цифровые медиа можно по-настоящему достигать людей. KINOR собирает таких людей вместе — чтобы познакомиться, поделиться опытом и найти единомышленников.</p>
+      <p>Конференция закончится через три дня. Знакомства, связи и совместные проекты могут продолжиться дальше.</p>
+    </div>
+    <svg class="chord" viewBox="0 0 560 360" role="img" aria-label="Струны в резонансе: одна задетая струна приводит в движение соседние">
+      <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#37C4AA" stop-opacity="0"/><stop offset=".5" stop-color="#37C4AA" stop-opacity=".9"/><stop offset="1" stop-color="#37C4AA" stop-opacity="0"/></linearGradient></defs>
+      <g fill="none" stroke-linecap="round">
+        <path d="M40 0 V360" stroke="url(#fade)" stroke-width="1.5" opacity=".35"/>
+        <path d="M100 0 Q106 180 100 360" stroke="url(#fade)" stroke-width="2" opacity=".55"/>
+        <path d="M160 0 Q174 180 160 360" stroke="url(#fade)" stroke-width="2.5" opacity=".75"/>
+        <path d="M220 0 Q242 180 220 360" stroke="url(#fade)" stroke-width="3"/>
+        <path d="M280 0 Q316 180 280 360" stroke="#F2B35B" stroke-width="4"/>
+        <path d="M340 0 Q318 180 340 360" stroke="url(#fade)" stroke-width="3"/>
+        <path d="M400 0 Q386 180 400 360" stroke="url(#fade)" stroke-width="2.5" opacity=".75"/>
+        <path d="M460 0 Q454 180 460 360" stroke="url(#fade)" stroke-width="2" opacity=".55"/>
+        <path d="M520 0 V360" stroke="url(#fade)" stroke-width="1.5" opacity=".35"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="light" id="who">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Для кого</p><h2 class="h2">Разные стороны медиа — один вопрос: как служить реальному человеку</h2></div>
+    <ul class="roles">
+      <li><b>Пасторы и лидеры</b><span>Общий язык между миссией, командой и цифровой коммуникацией.</span></li>
+      <li><b>Церковные медиакоманды</b><span>Контент и процессы, за метриками которых виден человек.</span></li>
+      <li><b>Авторы, блогеры и креаторы</b><span>Истории, блоги и независимые проекты.</span></li>
+      <li><b>Технические и творческие специалисты</b><span>Production, платформы, надёжность и качество опыта.</span></li>
+      <li><b>SMM и digital-команды</b><span>Платформы, отклик, комментарии и дальнейший разговор.</span></li>
+      <li><b>Опытные медиапроекты</b><span>Не только учиться — делиться опытом и находить партнёров.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="topics">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow" style="color:var(--teal)">Что будем обсуждать</p><h2 class="h2">Рабочие направления программы</h2></div>
+    <div class="topics">
+      <div class="topic"><h3>Миссия в цифровом пространстве</h3><p>Понятная точка входа к благовестию, живому общению и следующему шагу.</p></div>
+      <div class="topic"><h3>Человек за экраном</h3><p>От охвата к разговору, отношениям и внимательному сопровождению.</p></div>
+      <div class="topic"><h3>Контент и storytelling</h3><p>Истории и язык, понятные людям вне церковного контекста.</p></div>
+      <div class="topic"><h3>Комментарии, сообщения, отклик</h3><p>Кто отвечает и как не потерять человека после первого отклика.</p></div>
+      <div class="topic"><h3>Команды и процессы</h3><p>Роли, волонтёры и одна миссия для пастора и медиакоманды.</p></div>
+      <div class="topic"><h3>Технологии там, где они нужны</h3><p>Production и инструменты как средство решать реальные задачи.</p></div>
+    </div>
+    <p class="note" style="margin-top:24px">Финальная сетка тем уточняется по мере подтверждения программы и спикеров.</p>
+  </div>
+</section>
+
+<section class="light" id="format" style="background:var(--stone-2)">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Формат</p><h2 class="h2">Не только слушать. Разговаривать, разбирать реальные ситуации и знакомиться.</h2></div>
+    <div class="path" style="--on-night-2:var(--ink-2)">
+      <div class="step"><p class="eyebrow" style="color:var(--teal-ink)">До · Learn</p><h3>Настроиться</h3><p>Статьи, эфиры и вопросы, чтобы приехать со своей задачей.</p></div>
+      <div class="step"><p class="eyebrow" style="color:var(--teal-ink)">19–21 ноября · Meet</p><h3>Встретиться</h3><p>Пленарные встречи, мастер-классы, разборы кейсов, интервью и Q&amp;A.</p></div>
+      <div class="step"><p class="eyebrow" style="color:var(--teal-ink)">После · Build</p><h3>Построить</h3><p>Следующий практический шаг для команды, служения или проекта.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="speakers">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Спикеры, практики и партнёры</p><h2 class="h2">Публикуем только подтверждённых участников</h2></div>
+    <div class="speakers">
+      <article class="sp"><div class="ph" data-note="Место для фото: человек за работой"></div><span class="tag">Workshop</span><h3>Скоро</h3><p>Имя, проект и тема — после подтверждения</p></article>
+      <article class="sp"><div class="ph" data-note="Место для фото: интервью или разговор"></div><span class="tag">Case</span><h3>Скоро</h3><p>Имя, проект и тема — после подтверждения</p></article>
+      <article class="sp"><div class="ph" data-note="Место для фото: backstage, монтаж"></div><span class="tag">Panel</span><h3>Скоро</h3><p>Имя, проект и тема — после подтверждения</p></article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap quote">
+    <blockquote>Я приехал за техникой, а уехал с людьми, с которыми мы теперь делаем проект вместе</blockquote>
+    <div class="who"><span class="placeholder">ПРИМЕР ФОРМАТА ОТЗЫВА — не реальная цитата</span><b>Имя участника</b><span>Роль · проект</span></div>
+  </div>
+</section>
+
+<section class="light" id="program">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Расписание</p><h2 class="h2">Три дня в Кфар-Баптистим</h2></div>
+    <div class="days">
+      <div class="day"><span class="w">Четверг</span><span class="d">19</span><p>Заезд, знакомство, открытие.</p></div>
+      <div class="day"><span class="w">Пятница</span><span class="d">20</span><p>Основные сессии, мастер-классы, практические блоки и общение.</p></div>
+      <div class="day"><span class="w">Суббота</span><span class="d">21</span><p>Продолжение программы, итоговые сессии и следующие шаги.</p></div>
+    </div>
+    <div class="venue"><span><b>Baptist Village</b> / Кфар-Баптистим, Израиль</span><span style="color:var(--ink-2)">Точное расписание — после подтверждения программы</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow" style="color:var(--teal)">Частые вопросы</p><h2 class="h2">FAQ</h2></div>
+    <div class="faq">
+      <details><summary>Для кого эта конференция?</summary><p>Для пасторов и лидеров, медиакоманд, авторов, блогеров, SMM-, технических и творческих специалистов — и для тех, кто только начинает.</p></details>
+      <details><summary>Можно ли приехать со своим независимым проектом?</summary><p>Да. Идея KINOR — соединить людей, которые служат через медиа с разных сторон. Форматы участия уточняются вместе с программой.</p></details>
+      <details><summary>Подойдёт ли конференция новичку и опытной команде?</summary><p>Мы проектируем общую площадку с разными уровнями глубины: от первой точки входа до практических разборов процессов и проектов.</p></details>
+      <details><summary>На каком языке будет программа?</summary><p>Языковая модель ещё подтверждается. Оставьте интерес, чтобы получить актуальную информацию.</p></details>
+      <details><summary>Будут ли записи?</summary><p>Публикация записей зависит от программы, прав и разрешений. Сейчас мы не обещаем записи всех сессий.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="join">
+  <div class="wrap join">
+    <div>
+      <p class="eyebrow">Регистрация скоро</p>
+      <h2>Хочешь быть с нами?</h2>
+      <p>Если тебе близка идея использовать медиа ради людей и миссии — сохрани даты и оставь email. Мы сообщим об открытии регистрации и пришлём программу.</p>
+    </div>
+    <form id="interest" novalidate>
+      <div class="fields">
+        <label for="email">Email<input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></label>
+        <label for="lang">Предпочтительный язык<select id="lang" name="preferredLanguage"><option value="ru">Русский</option><option value="en">English</option><option value="he">עברית</option><option value="other">Другой</option></select></label>
+        <button class="btn btn-primary" type="submit">Подтвердить интерес</button>
+        <p class="note">Это не заявка на участие и не подписка на рассылку. В демонстрационной версии данные никуда не отправляются.</p>
+      </div>
+      <div class="done" role="status" aria-live="polite"><b>Спасибо!</b><p class="note">Это дизайн-концепт: форма работает в демо-режиме, данные не сохранены и не отправлены.</p></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>KINOR MediaConference 2026 · 19–21 ноября · Baptist Village, Israel</span>
+    <span class="lineage">
+      <svg width="18" height="18" viewBox="0 0 64 64" aria-hidden="true"><g stroke="#37C4AA" stroke-width="6" stroke-linecap="round"><line x1="12" y1="24" x2="12" y2="40"/><line x1="24" y1="14" x2="24" y2="50"/><line x1="36" y1="6" x2="36" y2="58"/><line x1="48" y1="14" x2="48" y2="50"/></g></svg>
+      из семьи KINOR · Радио Кинор
+    </span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('interest').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.currentTarget, em = f.querySelector('#email');
+  if (!em.checkValidity()) { em.reportValidity(); return; }
+  f.classList.add('sent');
+});
+(() => {
+  const c = document.getElementById('strings'), x = c.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, gap, n, person, plucks = [];
+  function size(){
+    const r = c.getBoundingClientRect(), d = Math.min(devicePixelRatio||1,2);
+    W = r.width; H = r.height; c.width = W*d; c.height = H*d; x.setTransform(d,0,0,d,0,0);
+    gap = W < 700 ? 44 : 30; n = Math.ceil(W/gap)+1;
+    person = Math.round(n * (W < 900 ? .9 : .66));
+    const one = document.querySelector('.one');
+    if (one) one.style.left = W >= 900 ? (person*gap + 22 - (one.parentElement.getBoundingClientRect().left - r.left)) + 'px' : '';
+  }
+  function pluck(i, a){ plucks.push({i, a, t0: performance.now()}); if (plucks.length>6) plucks.shift(); }
+  function draw(now){
+    x.clearRect(0,0,W,H);
+    for (let i=0;i<n;i++){
+      const px = i*gap;
+      const dist0 = Math.abs(i - person);
+      let off = 7 * Math.exp(-dist0/4) * Math.sin(now/1000*3.2 - dist0*.45);
+      for (const p of plucks){
+        const dt = (now - p.t0)/1000, dist = Math.abs(i - p.i);
+        const arrive = dist*0.055; if (dt < arrive) continue;
+        const life = dt - arrive;
+        off += p.a * Math.exp(-life*1.1) * Math.exp(-dist/7) * Math.sin(life*9);
+      }
+      const isP = i === person;
+      const nearText = W < 900 ? 0.15 : Math.max(0, Math.min(1, (px - W*0.45) / (W*0.25)));
+      const g = x.createLinearGradient(0,0,0,H);
+      const col = isP ? '242,179,91' : '55,196,170';
+      const base = isP ? 1 : (0.10 + 0.32*nearText);
+      g.addColorStop(0,`rgba(${col},0)`); g.addColorStop(.45,`rgba(${col},${base})`); g.addColorStop(1,`rgba(${col},0)`);
+      x.strokeStyle = g; x.lineWidth = isP ? 2.6 : 1.2;
+      x.beginPath(); x.moveTo(px,0); x.quadraticCurveTo(px + off*2, H*0.5, px, H); x.stroke();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  size(); addEventListener('resize', size);
+  plucks.push({i: person, a: 18, t0: performance.now() - 600});
+  if (reduce){ plucks = [{i:person,a:14,t0:performance.now()-260}]; draw(performance.now()); return; }
+  setInterval(() => pluck(person, 16), 4200);
+  c.parentElement.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect(); const i = Math.round((e.clientX - r.left)/gap);
+    if (!plucks.length || plucks[plucks.length-1].i !== i) pluck(i, 6);
+  });
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>

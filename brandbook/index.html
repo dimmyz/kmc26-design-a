@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Брендбук KINOR 2026 — айдентика «Струна»</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Брендбук Медиаконференции KINOR 2026: логотип, цвет, типографика, графика, экран и трансляция, цифровые форматы, печать и мерч.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Брендбук KINOR 2026 — айдентика «Струна»">
+<meta property="og:description" content="49 страниц: логотип, цвет, шрифты, титры трансляции, соцсети, бейджи, печать, мерч. Версия 1.0 на согласовании.">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/brandbook/pages/page-01.jpg">
+<meta property="og:url" content="https://dimmyz.github.io/kmc26-design-a/brandbook/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1A22">
+<link rel="icon" href="logo/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Onest:wght@400;500;600;700&display=swap">
+<style>
+:root{--night:#0B1A22;--deep:#10262F;--teal:#37C4AA;--lamp:#F2B35B;--stone:#EDF0EB;--on2:rgba(237,240,235,.7)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--stone);font:400 17px/1.6 "Onest",Arial,sans-serif;padding-inline:clamp(16px,4vw,56px)}
+.wrap{max-width:1280px;margin-inline:auto;padding-block:48px 96px}
+header{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end;padding-bottom:40px;border-bottom:1px solid rgba(237,240,235,.14)}
+h1{font:600 clamp(40px,6vw,76px)/1 "Onest",Arial,sans-serif;letter-spacing:-.025em;margin:16px 0 0;text-wrap:balance}
+.lbl{font:600 13px/1 "Onest",Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin:0}
+.serif{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;color:var(--lamp)}
+p{margin:0}
+.lead{color:var(--on2);max-width:56ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 24px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid rgba(237,240,235,.2);color:var(--stone)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:var(--night)}
+.btn:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-block:28px}
+nav a{padding:8px 14px;border-radius:999px;background:var(--deep);color:var(--stone);text-decoration:none;font-size:14px}
+nav a:focus-visible{outline:2px solid var(--lamp)}
+.pages{display:grid;gap:28px}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:8px;background:#10262F;aspect-ratio:16/9}
+figcaption{margin-top:8px;font-size:13px;color:var(--on2);font-variant-numeric:tabular-nums}
+.note{margin-top:40px;padding:20px 24px;border-radius:14px;background:var(--deep);color:var(--on2);font-size:15px}
+@media (max-width:800px){header{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <p class="lbl">Медиаконференция KINOR 2026 · версия 1.0</p>
+      <h1>Брендбук айдентики «Струна»</h1>
+    </div>
+    <div>
+      <p class="lead">Логотип, цвет, типографика, графические элементы, титры трансляции, соцсети, email, печать, навигация и мерч. <span class="serif">за экраном — человек</span></p>
+      <div class="actions">
+        <a class="btn primary" href="KINOR-2026-brandbook-v1.0.pdf">Скачать PDF · 7 МБ</a>
+        <a class="btn" href="logo/">Файлы логотипа</a>
+        <a class="btn" href="../">Сайт-концепт</a>
+      </div>
+    </div>
+  </header>
+  <nav aria-label="Разделы">
+    <a href="#p-01">Обложка</a><a href="#p-03">Бренд</a><a href="#p-06">01 Логотип</a><a href="#p-14">02 Цвет</a><a href="#p-18">03 Типографика</a><a href="#p-22">04 Графика</a><a href="#p-28">05 Экран</a><a href="#p-34">06 Цифра</a><a href="#p-39">07 Печать</a><a href="#p-46">08 Мерч</a><a href="#p-48">Файлы</a>
+  </nav>
+  <div class="pages" id="pages"></div>
+  <p class="note">Черновик на согласовании — не утверждённая айдентика. Имена, контакты и отзывы в макетах — примеры формата. Pantone и CMYK — ориентиры, перед тиражом нужна цветопроба.</p>
+</div>
+<script>
+const box=document.getElementById('pages');
+for(let i=1;i<=49;i++){const n=String(i).padStart(2,'0');box.insertAdjacentHTML('beforeend',`<figure id="p-${n}"><img src="pages/page-${n}.jpg" alt="Страница ${i} брендбука KINOR 2026" loading="${i<3?'eager':'lazy'}" width="1920" height="1080"><figcaption>${n} / 49</figcaption></figure>`);}
+</script>
+</body>
+</html>

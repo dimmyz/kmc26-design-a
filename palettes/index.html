@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KINOR — акцентный цвет: шесть вариантов</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Шесть вариантов акцентного цвета для айдентики «Струна»: Бирюза, Небо, Лаванда, Туман, Олива, Серебро — на логотипе, экранах, соцсетях и в печати.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KINOR — акцентный цвет: шесть вариантов">
+<meta property="og:description" content="Тёплая струна и тёмный фон остаются, меняется акцент. Сравнение для выбора командой.">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/palettes/pages/page-01.jpg">
+<meta property="og:url" content="https://dimmyz.github.io/kmc26-design-a/palettes/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0B1A22">
+<link rel="icon" href="../brandbook/logo/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<style>
+:root{--night:#0B1A22;--deep:#10262F;--lamp:#F2B35B;--stone:#EDF0EB;--on2:rgba(237,240,235,.7)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--night);color:var(--stone);font:400 17px/1.6 "Onest",Arial,sans-serif;padding-inline:clamp(16px,4vw,56px)}
+.wrap{max-width:1280px;margin-inline:auto;padding-block:48px 96px}
+header{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end;padding-bottom:36px;border-bottom:1px solid rgba(237,240,235,.14)}
+h1{font:600 clamp(38px,5.6vw,72px)/1 "Onest",Arial,sans-serif;letter-spacing:-.025em;margin:16px 0 0;text-wrap:balance}
+.lbl{font:600 13px/1 "Onest",Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--lamp);margin:0}
+p{margin:0}
+.lead{color:var(--on2);max-width:56ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid rgba(237,240,235,.2);color:var(--stone)}
+.btn.primary{background:var(--stone);color:var(--night);border-color:var(--stone)}
+.btn:focus-visible,nav a:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-block:26px}
+.chip{display:inline-flex;gap:10px;align-items:center;padding:8px 14px 8px 8px;border-radius:999px;background:var(--deep);font-size:15px;text-decoration:none;color:var(--stone)}
+.chip i{width:22px;height:22px;border-radius:50%;display:inline-block}
+.pages{display:grid;gap:28px}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border-radius:8px;background:#10262F;aspect-ratio:16/9}
+figcaption{margin-top:8px;font-size:13px;color:var(--on2);font-variant-numeric:tabular-nums}
+@media (max-width:800px){header{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <p class="lbl">Дополнение к брендбуку «Струна»</p>
+      <h1>Акцентный цвет: шесть вариантов</h1>
+    </div>
+    <div>
+      <p class="lead">Тёплая струна, тёмный фон, знак и шрифты остаются. Меняется только акцент — на логотипе, экранах, в соцсетях и печати.</p>
+      <div class="actions">
+        <a class="btn primary" href="KINOR-accent-color-options.pdf">Скачать PDF</a>
+        <a class="btn" href="../brandbook/">Брендбук</a>
+      </div>
+    </div>
+  </header>
+  <nav class="chips" aria-label="Варианты">
+    <a class="chip" href="#p-04"><i style="background:#37C4AA"></i>Бирюза · сейчас</a>
+    <a class="chip" href="#p-05"><i style="background:#62A8F2"></i>Небо</a>
+    <a class="chip" href="#p-06"><i style="background:#9DA4FF"></i>Лаванда</a>
+    <a class="chip" href="#p-07"><i style="background:#8FB9CC"></i>Туман</a>
+    <a class="chip" href="#p-08"><i style="background:#B5C98A"></i>Олива</a>
+    <a class="chip" href="#p-09"><i style="background:#C9D4D2"></i>Серебро</a>
+    <a class="chip" href="#p-10"><i style="background:linear-gradient(90deg,#37C4AA,#62A8F2,#9DA4FF,#8FB9CC,#B5C98A,#C9D4D2)"></i>Сравнение</a>
+    <a class="chip" href="#p-14"><i style="background:#F2B35B"></i>Семейство проектов</a>
+  </nav>
+  <div class="pages" id="pages"></div>
+</div>
+<script>
+const box=document.getElementById('pages');
+for(let i=1;i<=15;i++){const n=String(i).padStart(2,'0');box.insertAdjacentHTML('beforeend',`<figure id="p-${n}"><img src="pages/page-${n}.jpg" alt="Страница ${i}: варианты акцентного цвета KINOR" loading="${i<3?'eager':'lazy'}" width="1920" height="1080"><figcaption>${n} / 15</figcaption></figure>`);}
+</script>
+</body>
+</html>

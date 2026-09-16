@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Семья сайтов KINOR</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Три родственных сайта на одной теме: KINOR.MEDIA («Серебро»), Медиаконференция 2026 («Туман»), Медиашкола («Олива»).">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Семья сайтов KINOR — дизайн-схема">
+<meta property="og:description" content="KINOR.MEDIA · Медиаконференция 2026 · Медиашкола — одна тема, три скина.">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/sites/spec/pages/page-01.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../brandbook/logo/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/kinor-skins.css">
+<style>
+.sites{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.site{display:grid;gap:14px;text-decoration:none;color:var(--on-dark)}
+.site img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:14px;display:block;border:1px solid var(--hair-dark)}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:960px){.sites{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="skin-media dark">
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Дизайн-схема v1.0 · концепт</p>
+      <h1 class="h1" style="font-size:clamp(40px,6vw,76px)">Семья сайтов KINOR</h1>
+      <p class="lead">Одна Ghost-тема, общий знак и тёплая струна, три скина: спокойный зонтичный KINOR.MEDIA, тихая конференция и растущая медиашкола.</p>
+      <div class="links"><a class="btn btn-primary" href="spec/KINOR-sites-design-scheme-v1.0.pdf">Дизайн-схема · PDF</a><a class="btn btn-ghost" href="assets/kinor-skins.css">CSS-токены</a><a class="btn btn-ghost" href="assets/kinor-tokens.json">tokens.json</a><a class="btn btn-ghost" href="../brandbook/">Брендбук</a></div>
+    </div>
+    <div class="sites">
+      <a class="site" href="media/"><img src="img/media-desktop-hero.jpg" alt="Первый экран KINOR.MEDIA в теме «Серебро»"><span class="row"><span class="dot" style="background:#C9D4D2"></span><b>KINOR.MEDIA · «Серебро»</b></span><span class="small muted">Зонтичный сайт: статьи, материалы, проекты, команда</span></a>
+      <a class="site" href="conf26/"><img src="img/conf26-desktop-hero.jpg" alt="Первый экран сайта конференции в теме «Туман»"><span class="row"><span class="dot" style="background:#8FB9CC"></span><b>Медиаконференция 2026 · «Туман»</b></span><span class="small muted">conf26.kinor.media — лендинг события</span></a>
+      <a class="site" href="school/"><img src="img/school-desktop-hero.jpg" alt="Первый экран медиашколы в теме «Олива»"><span class="row"><span class="dot" style="background:#B5C98A"></span><b>Медиашкола · «Олива»</b></span><span class="small muted">Будущий образовательный проект</span></a>
+    </div>
+  </div>
+</section>
+</body>
+</html>

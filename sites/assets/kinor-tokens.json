@@ -1,0 +1,72 @@
+{
+  "$schema": "kinor-design-tokens/1.0",
+  "version": "1.0.0-concept",
+  "date": "2026-09-17",
+  "status": "DESIGN CONCEPT — not approved for production",
+  "foundation": {
+    "color": {
+      "night": "#0B1A22",
+      "deep": "#163847",
+      "surface": "#10262F",
+      "lamp": { "value": "#F2B35B", "role": "the one warm string = a person; never used as a UI accent" },
+      "lampInk": { "value": "#D9892A", "role": "warm string on light surfaces" },
+      "ink": "#0D1B21",
+      "ink2": "#44555B",
+      "white": "#FFFFFF",
+      "onDark": "#EDF0EB",
+      "onDark2": "rgba(237,240,235,.72)"
+    },
+    "font": {
+      "sans": "Onest (400/500/600/700) — Google Fonts, OFL",
+      "serif": "Cormorant Garamond Italic (400/500) — human phrases, quotes only",
+      "hebrew": "Rubik"
+    },
+    "radius": { "pill": "999px", "card": "18px", "field": "12px" },
+    "space": { "gutter": "clamp(16px,4vw,56px)", "section": "clamp(72px,9vw,128px)", "container": "1240px" },
+    "motion": { "breath": "7px · 3.2 rad/s", "pluck": "every 4.2–4.6 s, amplitude 14–16, decay e^-1.1t", "propagation": "55 ms per string", "reducedMotion": "static frame" }
+  },
+  "skins": {
+    "media": {
+      "site": "kinor.media",
+      "name": "Серебро",
+      "bodyClass": "skin-media",
+      "accent": "#C9D4D2",
+      "accentInk": "#4A5A5C",
+      "light": "#EEF0EE",
+      "light2": "#E2E6E4",
+      "cmyk": "20 10 13 0",
+      "pantone": "877 C metallic / Cool Gray 2 C",
+      "balance": "dark hero + light editorial body (≈35% dark / 65% light)",
+      "mood": "calm, strict, editorial umbrella"
+    },
+    "conf": {
+      "site": "conf26.kinor.media",
+      "name": "Туман",
+      "bodyClass": "skin-conf",
+      "accent": "#8FB9CC",
+      "accentInk": "#3B6A80",
+      "light": "#EDF0F1",
+      "light2": "#DDE6EA",
+      "cmyk": "42 15 15 0",
+      "pantone": "550 C",
+      "balance": "dark-first event (≈55% dark / 45% light)",
+      "mood": "quiet, adult, pastoral; warm string is the only colour"
+    },
+    "school": {
+      "site": "kinor.media/school (or school.kinor.media)",
+      "name": "Олива",
+      "bodyClass": "skin-school",
+      "accent": "#B5C98A",
+      "accentInk": "#55692F",
+      "light": "#F1F2EA",
+      "light2": "#E4E8D6",
+      "cmyk": "30 5 55 0",
+      "pantone": "578 C",
+      "cardRadius": "24px",
+      "balance": "light-first learning (≈25% dark / 75% light)",
+      "mood": "growth, practice, younger and friendly"
+    },
+    "radio": { "site": "kinor.live", "name": "Бирюза", "accent": "#37C4AA", "accentInk": "#0B7263", "note": "existing Radio Kinor site — reference only" },
+    "labs": { "site": "future", "name": "Лаванда", "accent": "#9DA4FF", "accentInk": "#4B50C2", "note": "reserved for KINOR Labs / Tech" }
+  }
+}

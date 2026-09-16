@@ -1,0 +1,506 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Семья сайтов KINOR — дизайн-схема v1.0</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Onest:wght@400;500;600;700&display=swap">
+<style>@page{size:1920px 1080px;margin:0}
+:root{--night:#0B1A22;--deep:#163847;--surface:#10262F;--teal:#37C4AA;--teal-ink:#0B7263;--lamp:#F2B35B;--lamp-ink:#D9892A;--stone:#EDF0EB;--stone2:#E1E6E0;--ink:#0D1B21;--ink2:#44555B;--on2:rgba(237,240,235,.72);--hair:rgba(13,27,33,.14);--hairn:rgba(237,240,235,.14);
+--sans:"Onest",Arial,system-ui,sans-serif;--serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#56625f;padding:40px;display:grid;gap:40px;justify-content:center;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+@media print{body{padding:0;gap:0;background:none;display:block}.page{break-after:page}}
+p,h1,h2,h3{margin:0}
+.page{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--stone);color:var(--ink)}
+.page.night{background:var(--night);color:var(--stone)}
+.page.white{background:#fff}
+.page.deep{background:var(--deep);color:var(--stone)}
+.run,.foot{position:absolute;left:120px;right:120px;display:flex;justify-content:space-between;font:600 13px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);z-index:5}
+.run{top:52px}.foot{bottom:48px;letter-spacing:.12em}
+.night .run,.night .foot,.deep .run,.deep .foot{color:rgba(237,240,235,.5)}
+.body{position:absolute;left:120px;right:120px;top:130px;bottom:120px}
+.t{font:600 60px/1.04 var(--sans);letter-spacing:-.02em;text-wrap:balance}
+.t2{font:600 36px/1.1 var(--sans);letter-spacing:-.015em}
+.lead{font-size:23px;line-height:1.5;color:var(--ink2);max-width:54ch}
+.night .lead,.deep .lead{color:var(--on2)}
+.lbl{font:600 14px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink)}
+.night .lbl,.deep .lbl{color:var(--teal)}
+.cap{font-size:16px;line-height:1.45;color:var(--ink2)}
+.night .cap,.deep .cap{color:var(--on2)}
+.serif{font-family:var(--serif);font-style:italic;font-weight:500}
+.row{display:flex;gap:32px}
+.g{display:grid;gap:28px}
+.card{background:#fff;border-radius:18px}
+.cardn{background:var(--night);color:var(--stone);border-radius:18px}
+.shadow{box-shadow:0 30px 60px rgba(13,27,33,.22),0 4px 12px rgba(13,27,33,.12)}
+.sc{width:calc(var(--w)*1px*var(--k));height:calc(var(--h)*1px*var(--k));overflow:hidden;position:relative;flex:none}
+.sc>.in{width:calc(var(--w)*1px);height:calc(var(--h)*1px);transform:scale(var(--k));transform-origin:0 0;position:absolute;left:0;top:0;overflow:hidden}
+.vid{background:radial-gradient(60% 70% at 38% 42%,#8a9a9c 0%,#4c5d61 35%,#1d2a2e 70%,#0c1418 100%)}
+.who{position:absolute;border-radius:50% 50% 30% 30%/60% 60% 30% 30%;background:rgba(10,16,19,.55)}
+.ok{color:#0B7263;font-weight:600}.no{color:#B4462B;font-weight:600}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--hair);vertical-align:top;font-size:17px}
+th{font:600 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.num{font-variant-numeric:tabular-nums}
+.x{position:absolute;inset:0;pointer-events:none}
+.opener .big{position:absolute;left:120px;bottom:150px}
+.opener .n{font:600 220px/0.8 var(--sans);letter-spacing:-.05em;color:var(--teal)}
+.opener h1{font:600 110px/1 var(--sans);letter-spacing:-.03em;margin-top:30px}
+.opener .sub{margin-top:26px;font-size:26px;color:var(--on2);max-width:44ch;line-height:1.45}
+.fret-s{width:14px;height:14px;margin-top:8px;border-radius:50%;border:3px solid #3B6A80;flex:none}.fret-s.warm-s{border:0;background:#D9892A}</style><script>// KINOR accent palette explorer — shared constants, drawing helpers and page templates.
+const BASE = { night:'#0B1A22', deep:'#163847', surface:'#10262F', lamp:'#F2B35B', lampInk:'#D9892A', ink:'#0D1B21', ink2:'#44555B' };
+const OPTS = [
+  { id:'teal', name:'Бирюза', tag:'текущий · как у Радио Кинор', accent:'#37C4AA', ink:'#0B7263', stone:'#EDF0EB', hue:169, sat:.57,
+    rule:'Триада с тёплой струной', ruleText:'Тёплая струна 35° и бирюза 169° — близко к классической триаде (35° · 155° · 275°).',
+    mood:'Свежий, эфирный, «звучащий». Прямое родство с радио.', risk:'Конференцию трудно отличить от Радио Кинор, особенно на аватарах и в мессенджерах.',
+    cmyk:'68 · 0 · 45 · 0', pms:'7465 C', distance:'0°', use:'Радио Кинор' },
+  { id:'sky', name:'Небо', tag:'комплементарный', accent:'#62A8F2', ink:'#1D5FA6', stone:'#EDF1F4', hue:211, sat:.84,
+    rule:'Комплементарная пара', ruleText:'Небо 211° стоит напротив тёплой струны 35° на цветовом круге и в одном семействе с тёмным фоном 201°. Самая сильная гармония: тепло и холод уравновешены.',
+    mood:'Доверие, ясность, открытое небо Галилеи. Тёплая струна выделяется сильнее всего.', risk:'Синий часто встречается в IT и корпоративных брендах — человечность держат тёплая струна и курсив Cormorant.',
+    cmyk:'60 · 25 · 0 · 0', pms:'284 C', distance:'42°', use:'Медиаконференция' },
+  { id:'lav', name:'Лаванда', tag:'расщеплённо-комплементарный', accent:'#9DA4FF', ink:'#4B50C2', stone:'#F0F0F5', hue:236, sat:1,
+    rule:'Расщеплённая комплементарная', ruleText:'Вместо точной противоположности 215° берём соседний оттенок 236°. Контраст с тёплой струной мягче, палитра — креативнее.',
+    mood:'Творческий, современный, медиа и креаторы. Лёгкая мечтательность.', risk:'Фиолетовые оттенки близки к «AI-палитре» и хуже попадают в CMYK — нужна цветопроба; держим пастельным.',
+    cmyk:'40 · 33 · 0 · 0', pms:'2716 C', distance:'67°', use:'KINOR Labs · Tech · платформа' },
+  { id:'mist', name:'Туман', tag:'монохромный', accent:'#8FB9CC', ink:'#3B6A80', stone:'#EDF0F1', hue:199, sat:.36,
+    rule:'Монохромная + один тёплый акцент', ruleText:'Акцент выведен из самого фона (199°), только светлее и мягче. Единственный по-настоящему цветной элемент — тёплая струна.',
+    mood:'Тихий, редакционный, взрослый. Ближе всего пасторам и зрелым проектам.', risk:'Меньше энергии для креаторов: кнопки и ссылки выглядят спокойнее, нужен крупнее кегль CTA.',
+    cmyk:'42 · 15 · 15 · 0', pms:'550 C', distance:'30° + низкая насыщенность', use:'Сообщество · Relationship' },
+  { id:'olive', name:'Олива', tag:'природный аналоговый', accent:'#B5C98A', ink:'#55692F', stone:'#EFF0E9', hue:79, sat:.4,
+    rule:'Аналоговая «олива + мёд»', ruleText:'Олива 79° — соседка тёплой струны 35° по кругу. Как оливковая роща в тёплом свете: связь с Израилем без символов.',
+    mood:'Рост, земля, обучение, спокойная практичность.', risk:'При насыщении уходит в салатовый — держим приглушённым. Струна и акцент ближе по тону, поэтому струну делаем толще.',
+    cmyk:'30 · 5 · 55 · 0', pms:'578 C', distance:'90°', use:'KINOR Академия · Медиашкола' },
+  { id:'silver', name:'Серебро', tag:'ахроматический', accent:'#C9D4D2', ink:'#4A5A5C', stone:'#EEF0EE', hue:170, sat:.1,
+    rule:'Ахроматическая + один тёплый', ruleText:'Струны почти без цвета — серебро на тёмном фоне. Вся эмоция держится на тёплой струне. Классика редакционных и музыкальных брендов.',
+    mood:'Премиальный, сдержанный, «фотография и звук».', risk:'Без цветного акцента бренд может казаться холодным. В печати — серебряный металлик или светло-серый.',
+    cmyk:'20 · 10 · 13 · 0', pms:'877 C (металлик) / Cool Gray 2 C', distance:'ахроматический', use:'KINOR.MEDIA — зонтичный бренд' },
+];
+const O = id => OPTS.find(o => o.id === id);
+const lum = h => { const v=[1,3,5].map(i=>parseInt(h.substr(i,2),16)/255).map(c=>c<=.03928?c/12.92:((c+.055)/1.055)**2.4); return .2126*v[0]+.7152*v[1]+.0722*v[2]; };
+const cr = (a,b) => { const [x,y]=[lum(a),lum(b)].sort((p,q)=>q-p); return (x+.05)/(y+.05); };
+
+function mark(o, v='dark', size=64, n=7) {
+  const s = v==='dark' ? o.accent : v==='light' ? o.ink : v==='white' ? '#fff' : BASE.ink;
+  const w = v==='dark' ? BASE.lamp : v==='light' ? BASE.lampInk : s;
+  const sets = { 7:{sw:5,l:[[8,26,38],[16,19,45],[24,12,52],[32,5,59],[40,12,52],[48,19,45],[56,26,38]],c:3,b:8}, 5:{sw:5.5,l:[[14,27,37],[23,19,45],[32,9,55],[41,19,45],[50,27,37]],c:2,b:9}, 3:{sw:7,l:[[17,22,42],[32,10,54],[47,22,42]],c:1,b:9} }[n];
+  const sw = o.id==='olive' && v!=='black' && v!=='white' ? sets.sw : sets.sw;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 64 64" style="display:block;flex:none"><g stroke-linecap="round" stroke-width="${sw}" fill="none">${sets.l.map(([x,a,b],i)=>i===sets.c?`<path d="M${x} ${a} Q${x+sets.b} 32 ${x} ${b}" stroke="${w}" stroke-width="${o.id==='olive'&&(v==='dark'||v==='light')?sw*1.25:sw}"/>`:`<line x1="${x}" y1="${a}" x2="${x}" y2="${b}" stroke="${s}"/>`).join('')}</g></svg>`;
+}
+function lockup(o, v='dark', h=64, desc=true, dt='Медиаконференция') {
+  const t = v==='dark' ? '#EDF0EB' : v==='white' ? '#fff' : BASE.ink;
+  const d = v==='dark' ? 'rgba(237,240,235,.62)' : v==='white' ? 'rgba(255,255,255,.8)' : BASE.ink2;
+  return `<span style="display:inline-flex;align-items:center;gap:${h*.3}px">${mark(o,v,h)}<span style="display:block"><span style="display:block;font:700 ${h*.5}px/1 var(--sans);letter-spacing:.2em;color:${t}">KINOR</span>${desc?`<span style="display:block;font:500 ${Math.max(8,h*.155)}px/1 var(--sans);letter-spacing:.24em;color:${d};margin-top:${h*.14}px;text-transform:uppercase">${dt}</span>`:''}</span></span>`;
+}
+function field(W, H, o, {gap=30, warm=.72, amp=40, op=.55, min=.05, light=false, ww}={}) {
+  const col = light ? o.ink : o.accent, wcol = light ? BASE.lampInk : BASE.lamp;
+  const id = 'g'+Math.random().toString(36).slice(2);
+  let s = `<svg width="${W}" height="${H}" style="position:absolute;left:0;top:0;pointer-events:none"><defs><linearGradient id="${id}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}"><stop offset="0" stop-color="${col}" stop-opacity="0"/><stop offset=".5" stop-color="${col}"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs>`;
+  const n = Math.floor(W/gap), kx = Math.round(n*warm);
+  for (let i=0;i<=n;i++){ const x=i*gap+(W-n*gap)/2, d=Math.abs(i-kx), one=i===kx, bend=amp*Math.exp(-d/3.5)*Math.cos(d*.9);
+    s += `<path d="M${x.toFixed(1)} 0 Q${(x+bend).toFixed(1)} ${H/2} ${x.toFixed(1)} ${H}" fill="none" stroke="${one?wcol:`url(#${id})`}" stroke-width="${one?(ww||Math.max(2.5,gap/7))*(o.id==='olive'?1.25:1):1.3}" stroke-linecap="round" opacity="${one?1:(min+(op-min)*(i/n)).toFixed(2)}"/>`; }
+  return s+'</svg>';
+}
+const btn = (o, text, size=18, light=false) => `<span style="display:inline-flex;align-items:center;padding:${size*.7}px ${size*1.4}px;border-radius:999px;background:${light?o.ink:o.accent};color:${light?'#fff':BASE.night};font:600 ${size}px/1 var(--sans);white-space:nowrap">${text}</span>`;
+
+const T = {
+  option(sec, o) {
+    const tokens = [['Night',BASE.night,'фон · общий'],['Deep',BASE.deep,'поверхности · общий'],['Accent',o.accent,'струны, кнопки, метки на тёмном'],['Accent ink',o.ink,'метки и ссылки на светлом'],['Lamp',BASE.lamp,'тёплая струна · общий'],['Light',o.stone,'светлый фон, печать']];
+    sec.innerHTML = `<div class="body" style="display:grid;grid-template-columns:940px 1fr;gap:60px">
+      <div style="display:grid;grid-template-rows:520px 1fr;gap:22px">
+        <div style="background:${BASE.night};border-radius:18px;position:relative;overflow:hidden;color:#EDF0EB">${field(940,520,o,{gap:28,warm:.78})}
+          <div style="position:absolute;left:48px;top:44px">${lockup(o,'dark',52)}</div>
+          <p style="position:absolute;left:48px;top:170px;font:600 76px/.98 var(--sans);letter-spacing:-.025em">Медиа.<br>Миссия.<br>Движение.</p>
+          <p style="position:absolute;left:48px;bottom:44px;display:flex;gap:18px;align-items:center">${btn(o,'Подтвердить интерес',18)}<span style="font:600 13px/1 var(--sans);letter-spacing:.18em;color:${o.accent}">19–21 НОЯБРЯ 2026</span></p>
+          <p class="serif" style="position:absolute;left:540px;top:210px;width:170px;text-align:right;font-size:30px;line-height:1.05;color:${BASE.lamp}">за экраном — человек</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1.25fr 1fr;gap:22px">
+          <div style="background:${o.stone};border-radius:18px;position:relative;overflow:hidden;padding:30px 34px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)">${field(515,250,o,{gap:34,warm:.88,op:.35,min:.03,light:true,amp:24})}
+            <div style="position:relative">${lockup(o,'light',40)}</div>
+            <p style="position:relative;margin-top:26px;font:600 13px/1 var(--sans);letter-spacing:.18em;color:${o.ink}">ТЕМА ПРОГРАММЫ</p>
+            <p style="position:relative;margin-top:10px;font:600 28px/1.1 var(--sans);color:${BASE.ink}">Кто ваш один человек?</p>
+            <p style="position:relative;margin-top:14px;display:flex;gap:16px;align-items:center">${btn(o,'Программа',14,true)}<span style="font-size:15px;color:${o.ink};text-decoration:underline">kinor.media</span></p>
+          </div>
+          <div style="background:${BASE.deep};border-radius:18px;padding:26px 28px;display:grid;gap:14px;align-content:start;color:#EDF0EB">
+            <p style="font:600 12px/1 var(--sans);letter-spacing:.18em;color:${o.accent}">МЕЛКИЕ ДЕТАЛИ</p>
+            <div style="display:flex;gap:16px;align-items:end"><span style="width:56px;height:56px;border-radius:14px;background:${BASE.night};display:grid;place-items:center;box-shadow:0 0 0 1px rgba(237,240,235,.15)">${mark(o,'dark',40,5)}</span><span style="width:32px;height:32px;border-radius:8px;background:${BASE.night};display:grid;place-items:center">${mark(o,'dark',24,3)}</span><span style="width:16px;height:16px;border-radius:4px;background:${BASE.night};display:grid;place-items:center">${mark(o,'dark',14,3)}</span></div>
+            <div style="display:flex;gap:10px;align-items:stretch;background:rgba(11,26,34,.9);border-radius:8px;padding:10px 14px"><svg width="8" height="40" viewBox="0 0 8 40"><path d="M2 2 Q8 20 2 38" stroke="${BASE.lamp}" stroke-width="3" fill="none" stroke-linecap="round"/></svg><span><b style="font-size:15px">Имя Фамилия</b><br><span style="font-size:12px;color:${o.accent}">медиалид · проект</span></span></div>
+            <p style="font-size:13px;display:flex;gap:10px;align-items:center"><span style="width:10px;height:10px;border-radius:50%;border:2px solid ${o.accent}"></span>лад-маркер<span style="width:10px;height:10px;border-radius:50%;background:${BASE.lamp};margin-left:8px"></span>активный</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;gap:22px;align-content:start">
+        <div><p class="lbl" style="color:${o.ink}">${o.tag}</p><h2 class="t" style="margin-top:14px">${o.name}</h2><p class="num" style="margin-top:10px;font-size:20px;color:${BASE.ink2}">${o.accent} · отличие от радио: ${o.distance}</p></div>
+        <div style="display:grid;grid-template-columns:repeat(6,1fr);border-radius:14px;overflow:hidden;height:90px">${tokens.map(([n,h])=>`<div style="background:${h};box-shadow:inset 0 0 0 1px rgba(13,27,33,.06)"></div>`).join('')}</div>
+        <table style="margin-top:-6px">${tokens.map(([n,h,r])=>`<tr><td style="padding:7px 10px;font-size:15px;width:110px"><b>${n}</b></td><td class="num" style="padding:7px 10px;font-size:15px;width:96px">${h}</td><td style="padding:7px 10px;font-size:14px;color:${BASE.ink2}">${r}</td></tr>`).join('')}</table>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:15px">
+          <div class="card" style="padding:14px 16px"><span class="cap">Accent на Night</span><br><b class="num">${cr(o.accent,BASE.night).toFixed(1)}:1</b> ${cr(o.accent,BASE.night)>=4.5?'<span class="ok">AA</span>':'<span class="no">мало</span>'}</div>
+          <div class="card" style="padding:14px 16px"><span class="cap">Accent ink на светлом</span><br><b class="num">${cr(o.ink,o.stone).toFixed(1)}:1</b> ${cr(o.ink,o.stone)>=4.5?'<span class="ok">AA</span>':'<span class="no">мало</span>'}</div>
+          <div class="card" style="padding:14px 16px"><span class="cap">CMYK ≈</span><br><b class="num">${o.cmyk}</b></div>
+          <div class="card" style="padding:14px 16px"><span class="cap">Pantone ≈</span><br><b>${o.pms}</b></div>
+        </div>
+        <div style="font-size:17px;line-height:1.5;display:grid;gap:10px">
+          <p><b>Гармония: ${o.rule}.</b> ${o.ruleText}</p>
+          <p><b>Характер:</b> ${o.mood}</p>
+          <p><b>Риск:</b> ${o.risk}</p>
+        </div>
+      </div></div>`;
+  },
+  wheel(sec) {
+    const R=330, cx=380, cy=380, pt=(h,r)=>[cx+r*Math.sin(h*Math.PI/180), cy-r*Math.cos(h*Math.PI/180)];
+    const [lx,ly]=pt(35,R*.86), [bx,by]=pt(260,R*.2);
+    let dots = OPTS.map(o=>{const [x,y]=pt(o.hue, o.id==='silver'?30:R*(.35+.6*o.sat));return `<circle cx="${x}" cy="${y}" r="26" fill="${o.accent}" stroke="#0D1B21" stroke-width="3"/><text x="${x}" y="${y+54}" text-anchor="middle" font-family="Onest" font-weight="600" font-size="20" fill="#0D1B21">${o.name}</text>`}).join('');
+    const [sx,sy]=pt(211,R*.86), [tx,ty]=pt(155,R*.86), [ux,uy]=pt(275,R*.86), [ax,ay]=pt(236,R*.95), [ox,oy]=pt(79,R*.6);
+    sec.querySelector('#wheelSvg').innerHTML = `
+      <line x1="${lx}" y1="${ly}" x2="${sx}" y2="${sy}" stroke="#0D1B21" stroke-width="3" stroke-dasharray="10 8"/>
+      <polygon points="${lx},${ly} ${tx},${ty} ${ux},${uy}" fill="none" stroke="#0D1B21" stroke-width="1.5" stroke-dasharray="4 6" opacity=".6"/>
+      <path d="M${lx} ${ly} L${ax} ${ay}" stroke="#4B50C2" stroke-width="2" stroke-dasharray="6 6"/>
+      <path d="M${lx} ${ly} L${ox} ${oy}" stroke="#55692F" stroke-width="2" stroke-dasharray="6 6"/>
+      <circle cx="${bx}" cy="${by}" r="30" fill="${BASE.night}" stroke="#fff" stroke-width="4"/><text x="${bx}" y="${by-44}" text-anchor="middle" font-family="Onest" font-weight="600" font-size="18" fill="#0D1B21">фон Night · 201°</text>
+      ${dots}
+      <circle cx="${lx}" cy="${ly}" r="34" fill="${BASE.lamp}" stroke="#0D1B21" stroke-width="4"/><text x="${lx+44}" y="${ly-30}" font-family="Onest" font-weight="700" font-size="22" fill="#0D1B21">тёплая струна 35°</text>`;
+  },
+  logos(sec) {
+    sec.querySelector('#logoRows').innerHTML = OPTS.map(o=>`<div style="display:grid;grid-template-columns:150px 330px 330px 170px 240px 1fr;gap:18px;align-items:stretch;height:118px">
+      <div style="display:grid;align-content:center"><b style="font-size:22px">${o.name}</b><span class="cap">${o.tag}</span></div>
+      <div style="background:${BASE.night};border-radius:12px;display:grid;place-items:center">${lockup(o,'dark',48)}</div>
+      <div style="background:${o.stone};border-radius:12px;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)">${lockup(o,'light',48)}</div>
+      <div style="background:${BASE.deep};border-radius:12px;display:flex;gap:14px;align-items:center;justify-content:center"><span style="width:48px;height:48px;border-radius:12px;background:${BASE.night};display:grid;place-items:center">${mark(o,'dark',36,5)}</span><span style="width:24px;height:24px;border-radius:6px;background:${BASE.night};display:grid;place-items:center">${mark(o,'dark',20,3)}</span><span style="width:16px;height:16px;border-radius:4px;background:${BASE.night};display:grid;place-items:center">${mark(o,'dark',14,3)}</span></div>
+      <div style="background:${BASE.night};border-radius:12px;display:grid;place-items:center">${btn(o,'Подтвердить интерес',15)}</div>
+      <div style="background:#fff;border-radius:12px;padding:16px 20px;display:grid;align-content:center;gap:6px"><span style="font:600 11px/1 var(--sans);letter-spacing:.18em;color:${o.ink}">МЕДИАКОНФЕРЕНЦИЯ KINOR 2026</span><span style="font-size:15px">Ссылка: <u style="color:${o.ink}">kinor.media/program</u></span><span style="font-size:14px;display:flex;gap:8px;align-items:center"><span style="width:9px;height:9px;border-radius:50%;border:2px solid ${o.ink}"></span>пункт списка · текст ${cr(o.ink,'#FFFFFF').toFixed(1)}:1</span></div>
+    </div>`).join('');
+  },
+  screens(sec) {
+    sec.querySelector('#screens').innerHTML = OPTS.map(o=>`<div style="display:grid;gap:8px"><div style="width:540px;height:304px;border-radius:10px;background:${BASE.night};position:relative;overflow:hidden;color:#EDF0EB;box-shadow:0 20px 40px rgba(13,27,33,.2)">${field(540,304,o,{gap:18,warm:.78,amp:20})}
+      <div style="position:absolute;left:26px;top:22px">${lockup(o,'dark',26)}</div>
+      <p style="position:absolute;left:26px;top:92px;font:600 38px/.98 var(--sans);letter-spacing:-.025em">Медиа.<br>Миссия.<br>Движение.</p>
+      <div style="position:absolute;left:26px;bottom:22px">${btn(o,'Подтвердить интерес',12)}</div>
+      <div style="position:absolute;right:20px;bottom:20px;display:flex;gap:8px;align-items:stretch;background:rgba(11,26,34,.92);border-radius:6px;padding:8px 12px"><svg width="6" height="30" viewBox="0 0 6 30"><path d="M1.5 1.5 Q6 15 1.5 28.5" stroke="${BASE.lamp}" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg><span style="font-size:11px;line-height:1.3"><b>Имя Фамилия</b><br><span style="color:${o.accent}">роль · проект</span></span></div>
+    </div><p style="font-size:17px"><b>${o.name}</b> <span class="cap">· ${o.accent}</span></p></div>`).join('');
+  },
+  social(sec) {
+    sec.querySelector('#social').innerHTML = OPTS.map(o=>`<div style="display:grid;gap:12px;align-content:start">
+      <div style="width:262px;height:328px;border-radius:8px;background:${BASE.night};position:relative;overflow:hidden;color:#EDF0EB">${field(262,328,o,{gap:13,warm:.86,amp:14})}<div style="position:absolute;left:18px;top:18px">${lockup(o,'dark',18)}</div><p style="position:absolute;left:18px;top:176px;font:600 9px/1 var(--sans);letter-spacing:.2em;color:${o.accent}">SAVE THE DATE</p><p style="position:absolute;left:18px;top:192px;font:600 42px/.92 var(--sans);letter-spacing:-.03em">19–21<br>ноября</p><p class="serif" style="position:absolute;left:18px;bottom:16px;font-size:15px;color:${BASE.lamp}">Медиа открывает дверь</p></div>
+      <div style="width:262px;height:262px;border-radius:8px;background:${o.stone};position:relative;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)">${field(262,262,o,{gap:16,warm:.88,amp:12,op:.35,min:.03,light:true})}<p style="position:absolute;left:18px;top:18px;font:600 9px/1 var(--sans);letter-spacing:.2em;color:${o.ink}">ВОПРОС НЕДЕЛИ</p><p style="position:absolute;left:18px;top:130px;width:190px;font:600 26px/1 var(--sans);letter-spacing:-.02em;color:${BASE.ink}">100 000 просмотров — это успех?</p></div>
+      <p style="font-size:17px"><b>${o.name}</b></p></div>`).join('');
+  },
+  print(sec) {
+    sec.querySelector('#print').innerHTML = OPTS.map(o=>`<div style="display:grid;gap:14px;align-content:start">
+      <div style="width:262px;height:370px;background:${BASE.night};position:relative;overflow:hidden;color:#EDF0EB;box-shadow:0 18px 36px rgba(13,27,33,.25)">${field(262,370,o,{gap:11,warm:.72,amp:16,op:.65})}<div style="position:absolute;left:18px;top:18px">${lockup(o,'dark',18)}</div><p style="position:absolute;left:18px;top:182px;font:600 36px/.95 var(--sans);letter-spacing:-.03em">Медиа.<br>Миссия.<br>Движение.</p><p style="position:absolute;left:18px;bottom:18px;font:600 13px var(--sans)">19–21 ноября 2026</p></div>
+      <div style="width:262px;height:146px;background:${o.stone};position:relative;overflow:hidden;box-shadow:0 12px 24px rgba(13,27,33,.18);padding:18px 20px"><p style="font:600 17px/1.1 var(--sans)">Имя Фамилия</p><p style="font-size:10px;color:${o.ink};margin-top:4px">Координатор программы</p><svg width="222" height="16" style="display:block;margin-top:10px"><line x1="16" y1="8" x2="220" y2="8" stroke="${o.ink}" stroke-width="1"/><path d="M0 8 Q8 2 16 8" stroke="${BASE.lampInk}" stroke-width="2" fill="none"/></svg><p style="font-size:9px;line-height:1.5;color:${BASE.ink2};margin-top:6px">+972 00 000 00 00 · kinor.media</p><span style="position:absolute;right:16px;bottom:14px">${mark(o,'light',26,5)}</span></div>
+      <div style="width:262px;height:72px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px"><div style="background:${o.accent};border-radius:6px"></div><div style="background:${o.ink};border-radius:6px"></div><div style="background:${BASE.lamp};border-radius:6px"></div></div>
+      <p style="font-size:15px;line-height:1.35"><b>${o.name}</b><br><span class="cap num">CMYK ${o.cmyk}<br>Pantone ≈ ${o.pms}</span></p></div>`).join('');
+  },
+  family(sec) {
+    const fam = [['silver','KINOR.MEDIA','зонтичный бренд: контент, сообщество, аккаунт'],['teal','Радио','Радио Кинор — эфир и подкасты, как сейчас'],['sky','Медиаконференция','ежегодная встреча — рекомендуемый акцент'],['lav','Labs · Tech','KINOR Labs, разработка платформы, технологии'],['olive','Академия','KINOR Академия и Медиашкола — обучение'],['mist','Сообщество','Relationship, follow-up, клубы и встречи']];
+    sec.querySelector('#family').innerHTML = fam.map(([id,dt,txt])=>{const o=O(id);return `<div style="background:${BASE.night};border-radius:18px;height:360px;position:relative;overflow:hidden;color:#EDF0EB">${field(520,360,o,{gap:22,warm:.84,amp:22,op:.5,min:.03})}<div style="position:absolute;left:34px;top:34px">${lockup(o,'dark',46,true,dt)}</div><p style="position:absolute;left:34px;bottom:74px;width:360px;font-size:17px;line-height:1.45;color:rgba(237,240,235,.75)">${txt}</p><p style="position:absolute;left:34px;bottom:34px;font:600 13px/1 var(--sans);letter-spacing:.16em;color:${o.accent}">${o.name.toUpperCase()} · ${o.accent}</p></div>`}).join('');
+  }
+};
+
+function init() {
+  document.querySelectorAll('[data-tpl]').forEach(sec => { const t=sec.dataset.tpl; if (t==='option') T.option(sec, O(sec.dataset.opt)); else T[t](sec); });
+  document.querySelectorAll('[data-fill]').forEach(e => { const [kind,id,v,h]=e.dataset.fill.split(':'); e.innerHTML = kind==='lockup' ? lockup(O(id),v,+h) : mark(O(id),v,+h); });
+  const pages=[...document.querySelectorAll('.page')];
+  pages.forEach((p,i)=>{ if(p.dataset.bare) return;
+    p.insertAdjacentHTML('beforeend',`<div class="run"><span>KINOR · Акцентный цвет · варианты</span><span>${p.dataset.s||''}</span></div><div class="foot"><span class="num">${String(i+1).padStart(2,'0')}</span><span>Дополнение к брендбуку «Струна» v1.0 · сентябрь 2026</span></div>`); });
+  document.body.dataset.ready='1';
+}
+
+</script><script>// Site family design scheme — templates (uses helpers from palettes/src/pal.js, loaded before this file).
+const SITES = {
+  media: { o:'silver', title:'KINOR.MEDIA', domain:'kinor.media', skin:'skin-media · «Серебро»', balance:[35,65],
+    purpose:'Зонтичный дом KINOR: статьи, материалы, проекты, команда и подписка. Спокойный, строгий, редакционный.',
+    audience:'Все роли сообщества, партнёры, новые люди, которые пришли из соцсетей или с конференции.',
+    hero:'Тёмный hero: девиз «Медиа открывает дверь. Люди — цель.», поле струн, тёплая струна между колонками, подпись «за экраном — человек».',
+    map:['Главная','Статьи · рубрики','Материалы (библиотека)','Проекты','Команда · истории','О нас','Подписка · вход'],
+    comps:'Карточки проектов с цветами семьи · крупная статья + сетка · список материалов с доступом · карточки людей · подписка',
+    cta:'Читать статьи · Подписаться' },
+  conf26: { o:'mist', title:'Медиаконференция 2026', domain:'conf26.kinor.media → /conf26/', skin:'skin-conf · «Туман»', balance:[55,45],
+    purpose:'Лендинг события: за 10–20 секунд объяснить, что это, для кого и что делать дальше.',
+    audience:'Лидеры, команды, которые застряли, новички, авторы и SMM, опытные проекты.',
+    hero:'Тёмный hero: «Медиа. Миссия. Движение.», даты и место, живые туманные струны, тёплая струна справа.',
+    map:['Hero','За экраном — человек','Ты не один','Для кого','Формат From Media to Movements','Спикеры · отзывы','Расписание · место','FAQ','Интерес F0'],
+    comps:'Путь с ладами · роли списком · спикеры 4:5 · дни крупными цифрами · FAQ · форма интереса',
+    cta:'Подтвердить интерес · Сохранить даты' },
+  school: { o:'olive', title:'Медиашкола', domain:'kinor.media/school', skin:'skin-school · «Олива»', balance:[25,75],
+    purpose:'Будущая регулярная практика после конференции: треки, наставники, мини-группы, собственный проект.',
+    audience:'Новички и молодые авторы, команды, которым нужна система, те, кто «делает, но застрял».',
+    hero:'Светлый hero с тёмной карточкой-струнами, короткий понятный заголовок, чипы-факты с ладами.',
+    map:['Hero','Кому подойдёт','Треки','Как учимся (путь)','Наставники · отзывы','Вопросы','Первый набор'],
+    comps:'Карточки-цитаты «точки старта» · треки на тёмном · путь из 4 ладов · карточки 24 px · форма интереса к набору',
+    cta:'Узнать о наборе · Смотреть программу' },
+};
+
+function fillLockups() {
+  document.querySelectorAll('[data-fill]').forEach(e => { const [kind,id,v,h,dt] = e.dataset.fill.split(':'); e.innerHTML = kind==='lockup' ? lockup(O(id),v,+h,true,dt||'Медиаконференция') : mark(O(id),v,+h); });
+  document.querySelectorAll('svg.Fx').forEach(s => { const d=s.dataset; const W=+d.w,H=+d.h; s.setAttribute('width',W); s.setAttribute('height',H); s.outerHTML = field(W,H,O(d.opt),{gap:+d.gap||30,warm:+d.warm||.7,op:+d.op||.5,min:.04,light:!!d.light,amp:+(d.amp||30)}).replace('position:absolute;left:0;top:0;', (s.getAttribute('style')||'')+';'); });
+}
+function sitePage(sec, key) {
+  const s = SITES[key], o = O(s.o);
+  sec.innerHTML = `<div class="body" style="display:grid;grid-template-columns:1040px 1fr;gap:56px">
+    <div style="display:grid;gap:18px;align-content:start">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(13,27,33,.22)"><img src="../img/${key}-desktop-hero.jpg" style="width:100%;display:block"></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">${[['Accent',o.accent],['Accent ink',o.ink],['Light',o.stone],['Night',BASE.night],['Lamp',BASE.lamp]].map(([n,h])=>`<div style="border-radius:10px;overflow:hidden;background:#fff"><div style="height:56px;background:${h};box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)"></div><p style="padding:8px 10px;font-size:13px"><b>${n}</b> ${h}</p></div>`).join('')}</div>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start">
+      <div style="display:flex;justify-content:space-between;align-items:start;gap:20px"><div><p class="lbl" style="color:${o.ink}">${s.skin}</p><h2 class="t" style="margin-top:12px;font-size:48px">${s.title}</h2><p class="cap" style="font-size:17px;margin-top:6px">${s.domain}</p></div><div style="width:130px;flex:none;border-radius:16px;overflow:hidden;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/${key}-mobile-hero.jpg" style="width:100%;display:block"></div></div>
+      <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:600 13px/34px var(--sans)"><div style="flex:${s.balance[0]};background:${BASE.night};color:#EDF0EB;padding-left:12px">тёмное ${s.balance[0]}%</div><div style="flex:${s.balance[1]};background:${o.stone};padding-left:12px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.1)">светлое ${s.balance[1]}%</div></div>
+      <p style="font-size:17px;line-height:1.5"><b>Задача.</b> ${s.purpose}</p>
+      <p style="font-size:17px;line-height:1.5"><b>Для кого.</b> ${s.audience}</p>
+      <p style="font-size:17px;line-height:1.5"><b>Hero.</b> ${s.hero}</p>
+      <p style="font-size:17px;line-height:1.5"><b>Компоненты.</b> ${s.comps}</p>
+      <p style="font-size:17px;line-height:1.5"><b>Главные действия.</b> ${s.cta}</p>
+      <div><p class="lbl" style="color:${o.ink}">Карта страницы</p><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px">${s.map.map((m,i)=>`<span style="display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:#fff;font-size:14px"><span style="width:9px;height:9px;border-radius:50%;${i===1?`background:${BASE.lampInk}`:`border:2px solid ${o.ink}`}"></span>${m}</span>`).join('')}</div></div>
+    </div></div>`;
+}
+function skinCols() {
+  const el = document.getElementById('skinCols'); if (!el) return;
+  el.innerHTML = Object.entries(SITES).map(([k,s]) => { const o=O(s.o); return `<div style="display:grid;gap:14px;align-content:start">
+    <div style="height:250px;border-radius:18px;background:${BASE.night};position:relative;overflow:hidden">${field(520,250,o,{gap:24,warm:.8,amp:22})}<div style="position:absolute;left:30px;top:30px">${lockup(o,'dark',42,true,k==='media'?'Media':k==='conf26'?'Медиаконференция 2026':'Медиашкола')}</div><span style="position:absolute;left:30px;bottom:26px">${btn(o,s.cta.split(' · ')[0],15)}</span></div>
+    <div style="height:170px;border-radius:18px;background:${o.stone};position:relative;overflow:hidden;padding:26px 30px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)">${field(520,170,o,{gap:30,warm:.9,amp:14,op:.35,min:.03,light:true})}<p style="position:relative;font:600 12px/1 var(--sans);letter-spacing:.18em;color:${o.ink}">${s.title.toUpperCase()}</p><p style="position:relative;margin-top:12px;font:600 28px/1.1 var(--sans)">${s.skin.split(' · ')[1]}</p><p style="position:relative;margin-top:14px">${btn(o,'Кнопка на светлом',14,true)}</p></div>
+    <table><tr><td style="width:130px">body</td><td><b>.${s.skin.split(' ')[0]}</b></td></tr><tr><td>--accent</td><td class="num">${o.accent} · ${cr(o.accent,BASE.night).toFixed(1)}:1</td></tr><tr><td>--accent-ink</td><td class="num">${o.ink} · ${cr(o.ink,o.stone).toFixed(1)}:1</td></tr><tr><td>--light</td><td class="num">${o.stone}</td></tr><tr><td>Характер</td><td>${o.mood}</td></tr></table></div>`; }).join('');
+}
+function foundSw() {
+  const el = document.getElementById('foundSw'); if (!el) return;
+  el.innerHTML = [['Night',BASE.night,'основной тёмный'],['Deep',BASE.deep,'поверхности, проектор'],['Surface',BASE.surface,'карточки, поля'],['Lamp',BASE.lamp,'тёплая струна'],['Lamp ink',BASE.lampInk,'струна на светлом'],['Ink',BASE.ink,'текст на светлом']].map(([n,h,r])=>`<div class="card"><div style="height:120px;background:${h}"></div><div style="padding:14px 16px;font-size:15px"><b>${n}</b> ${h}<br><span class="cap">${r}</span></div></div>`).join('');
+}
+function specInit() {
+  fillLockups(); foundSw(); skinCols();
+  document.querySelectorAll('[data-site]').forEach(s => sitePage(s, s.dataset.site));
+  const pages=[...document.querySelectorAll('.page')];
+  pages.forEach((p,i)=>{ if(p.dataset.bare) return; p.insertAdjacentHTML('beforeend',`<div class="run"><span>KINOR · Семья сайтов · дизайн-схема</span><span>${p.dataset.s||''}</span></div><div class="foot"><span class="num">${String(i+1).padStart(2,'0')}</span><span>v1.0 · 17.09.2026 · концепт для команды</span></div>`); });
+  const imgs=[...document.images]; Promise.all(imgs.map(im=>im.complete?1:new Promise(r=>{im.onload=im.onerror=r}))).then(()=>{document.body.dataset.ready='1';});
+}
+document.addEventListener('DOMContentLoaded', () => document.fonts.ready.then(specInit));
+</script></head><body><!-- 01 COVER -->
+<section class="page night" data-bare="1">
+  <svg class="Fx" data-opt="silver" data-w="1920" data-h="1080" data-gap="34" data-warm=".5" data-op=".45" style="position:absolute;inset:0"></svg>
+  <div style="position:absolute;left:120px;top:110px" data-fill="lockup:silver:dark:60"></div>
+  <div style="position:absolute;left:120px;top:330px;width:760px">
+    <p class="lbl" style="font-size:18px;color:#C9D4D2">Дизайн-схема · v1.0 · для команды</p>
+    <h1 style="font:600 116px/.95 var(--sans);letter-spacing:-.035em;margin-top:26px">Семья<br>сайтов KINOR</h1>
+    <p style="margin-top:30px;font-size:26px;line-height:1.45;color:var(--on2)">Одна тема Ghost, один знак и одна тёплая струна. Три скина: KINOR.MEDIA, Медиаконференция 2026, Медиашкола.</p>
+  </div>
+  <div style="position:absolute;right:120px;top:150px;display:grid;gap:22px;width:760px">
+    <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center"><div style="border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px #C9D4D2"><img src="../img/media-desktop-hero.jpg" style="width:130px;display:block"></div><div><p style="font:600 30px var(--sans)">KINOR.MEDIA</p><p style="color:#C9D4D2;font-size:18px">«Серебро» · зонтичный сайт</p></div></div>
+    <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center"><div style="border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px #8FB9CC"><img src="../img/conf26-desktop-hero.jpg" style="width:130px;display:block"></div><div><p style="font:600 30px var(--sans)">Медиаконференция 2026</p><p style="color:#8FB9CC;font-size:18px">«Туман» · conf26.kinor.media</p></div></div>
+    <div style="display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center"><div style="border-radius:10px;overflow:hidden;box-shadow:0 0 0 2px #B5C98A"><img src="../img/school-desktop-hero.jpg" style="width:130px;display:block"></div><div><p style="font:600 30px var(--sans)">Медиашкола</p><p style="color:#B5C98A;font-size:18px">«Олива» · будущий проект</p></div></div>
+  </div>
+  <p style="position:absolute;left:120px;bottom:70px;font-size:17px;color:var(--on2)">17 сентября 2026 · дополнение к брендбуку «Струна» v1.0 · концепт, не production</p>
+</section>
+
+<!-- 02 FAMILY ARCHITECTURE -->
+<section class="page" data-s="Архитектура семьи">
+  <div class="body">
+    <p class="lbl">Кто есть кто</p>
+    <h2 class="t" style="margin-top:18px;max-width:30ch">Один дом KINOR.MEDIA — несколько комнат со своим светом</h2>
+    <svg width="1680" height="560" viewBox="0 0 1680 560" style="margin-top:34px;font-family:Onest">
+      <rect x="560" y="0" width="560" height="140" rx="20" fill="#0B1A22"/>
+      <text x="840" y="62" text-anchor="middle" font-size="36" font-weight="600" fill="#EDF0EB">KINOR.MEDIA</text>
+      <text x="840" y="102" text-anchor="middle" font-size="19" fill="#C9D4D2">«Серебро» · kinor.media · Ghost 6 · зонтичный бренд</text>
+      <g stroke="#9AA7A2" stroke-width="2" fill="none"><path d="M840 140 V200 H210 V250"/><path d="M840 200 H630 V250"/><path d="M840 200 H1050 V250"/><path d="M840 200 H1470 V250"/></g>
+      <g font-size="17">
+        <rect x="40" y="250" width="340" height="170" rx="18" fill="#fff" stroke="#37C4AA" stroke-width="3"/><circle cx="76" cy="290" r="11" fill="#37C4AA"/><text x="98" y="297" font-size="26" font-weight="600" fill="#0D1B21">Радио Кинор</text><text x="66" y="340" fill="#44555B">«Бирюза» · kinor.live</text><text x="66" y="368" fill="#44555B">отдельный Ghost — уже работает</text><text x="66" y="396" fill="#44555B">в семье — ссылкой и знаком</text>
+        <rect x="460" y="250" width="340" height="170" rx="18" fill="#fff" stroke="#8FB9CC" stroke-width="3"/><circle cx="496" cy="290" r="11" fill="#8FB9CC"/><text x="518" y="297" font-size="26" font-weight="600" fill="#0D1B21">Конференция 26</text><text x="486" y="340" fill="#44555B">«Туман» · conf26.kinor.media</text><text x="486" y="368" fill="#44555B">маршрут /conf26/ в той же теме</text><text x="486" y="396" fill="#44555B">ежегодное событие</text>
+        <rect x="880" y="250" width="340" height="170" rx="18" fill="#fff" stroke="#B5C98A" stroke-width="3"/><circle cx="916" cy="290" r="11" fill="#B5C98A"/><text x="938" y="297" font-size="26" font-weight="600" fill="#0D1B21">Медиашкола</text><text x="906" y="340" fill="#44555B">«Олива» · /school/</text><text x="906" y="368" fill="#44555B">маршрут в той же теме</text><text x="906" y="396" fill="#44555B">старт — после конференции</text>
+        <rect x="1300" y="250" width="340" height="170" rx="18" fill="#fff" stroke="#9DA4FF" stroke-width="3" stroke-dasharray="8 6"/><circle cx="1336" cy="290" r="11" fill="#9DA4FF"/><text x="1358" y="297" font-size="26" font-weight="600" fill="#0D1B21">KINOR Labs</text><text x="1326" y="340" fill="#44555B">«Лаванда» · резерв</text><text x="1326" y="368" fill="#44555B">проекты, платформа,</text><text x="1326" y="396" fill="#44555B">Relationship OS — позже</text>
+      </g>
+      <text x="0" y="500" font-size="21" fill="#0D1B21" font-weight="600">Общее у всех:</text>
+      <text x="0" y="534" font-size="20" fill="#44555B">знак-ромб с тёплой струной · Night #0B1A22 и Deep #163847 · Lamp #F2B35B · Onest + Cormorant · поле струн · линия-струна · лады</text>
+    </svg>
+    <p class="cap" style="font-size:17px">Архитектура соответствует ADR-008 (16.09.2026): одна Ghost-публикация kinor.media и одна тема с разными визуальными режимами. conf26.kinor.media ведёт на маршрут конференции без второй CMS.</p>
+  </div>
+</section>
+
+<!-- 03 NAMING -->
+<section class="page" data-s="Название образовательного проекта">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:80px">
+    <div>
+      <p class="lbl">Медиашкола или Академия?</p>
+      <h2 class="t" style="margin-top:18px">Рекомендация: «Медиашкола KINOR»</h2>
+      <table style="margin-top:30px">
+        <tr><th></th><th>Медиашкола</th><th>Медиаакадемия</th></tr>
+        <tr><td>Ожидания</td><td>практика, курсы, наставник</td><td>программа, преподаватели, выпуск, статус</td></tr>
+        <tr><td>Ресурсы на старте</td><td class="ok">хватает уже сейчас</td><td class="no">нужна полноценная структура</td></tr>
+        <tr><td>Кому близко</td><td>новичкам, молодым авторам, командам</td><td>опытным, лидерам</td></tr>
+        <tr><td>Честность обещания</td><td class="ok">соответствует плану</td><td class="no">обещает больше, чем есть</td></tr>
+        <tr><td>Рост</td><td colspan="2">Школа → курсы → продвинутые программы → «KINOR Академия» как следующий уровень</td></tr>
+      </table>
+      <p class="lead" style="margin-top:26px;font-size:21px">Академию оставляем на будущее — для продвинутых программ, когда появятся постоянные наставники и выпуски.</p>
+    </div>
+    <div style="display:grid;gap:20px;align-content:start">
+      <p class="lbl">Как пишется</p>
+      <div class="card" style="padding:36px;background:#F1F2EA" data-fill="lockup:olive:light:84:Медиашкола"></div>
+      <div class="cardn" style="padding:36px" data-fill="lockup:olive:dark:84:Медиашкола"></div>
+      <table>
+        <tr><td style="width:220px">Русский</td><td><b>Медиашкола KINOR</b> · в тексте: «Медиашкола»</td></tr>
+        <tr><td>English</td><td><b>KINOR Media School</b></td></tr>
+        <tr><td>Дескриптор в логотипе</td><td>МЕДИАШКОЛА / MEDIA SCHOOL</td></tr>
+        <tr><td>Адрес</td><td>kinor.media/school (предпочтительно) или school.kinor.media</td></tr>
+        <tr><td>Будущее</td><td>KINOR Академия — продвинутый уровень внутри школы</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 04 FOUNDATION -->
+<section class="page" data-s="Общая основа">
+  <div class="body">
+    <p class="lbl">Не меняется ни на одном сайте</p>
+    <h2 class="t" style="margin-top:18px">Общая основа темы</h2>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:34px" id="foundSw"></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px">
+      <div class="card" style="padding:28px;display:grid;gap:12px"><p class="t2" style="font-size:26px">Шрифты</p><p style="font:600 44px/1 var(--sans)">Onest</p><p class="serif" style="font-size:40px;line-height:1">за экраном — человек</p><p class="cap">Onest — всё. Cormorant italic — только человеческие фразы и цитаты. Иврит — Rubik.</p></div>
+      <div class="card" style="padding:28px;display:grid;gap:12px"><p class="t2" style="font-size:26px">Форма</p><div style="display:flex;gap:12px;align-items:center"><span style="padding:14px 24px;border-radius:999px;background:#0B1A22;color:#EDF0EB;font-weight:600">Кнопка 999</span><span style="width:70px;height:50px;border-radius:18px;background:#E1E6E0"></span><span style="width:60px;height:44px;border-radius:12px;border:2px solid #9AA7A2"></span></div><p class="cap">Кнопки — капсулы. Карточки 18 px (в школе — 24). Поля 12 px. Контейнер 1240, поля clamp(16–56).</p></div>
+      <div class="card" style="padding:28px;display:grid;gap:12px"><p class="t2" style="font-size:26px">Правило струны</p><svg class="Fx" data-opt="mist" data-w="420" data-h="120" data-gap="20" data-warm=".7" data-op=".7" data-light="1" style="display:block;position:relative"></svg><p class="cap">Струны — цветом скина. Тёплая струна Lamp — всегда одна и всегда означает человека. Акцент скина никогда не бывает тёплым.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 SKINS -->
+<section class="page" data-s="Три скина">
+  <div class="body">
+    <p class="lbl">body.skin-media · body.skin-conf · body.skin-school</p>
+    <div id="skinCols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:22px"></div>
+  </div>
+</section>
+
+<!-- 06 MEDIA -->
+<section class="page" data-s="KINOR.MEDIA · «Серебро»" data-site="media"></section>
+<!-- 07 CONF -->
+<section class="page" data-s="Медиаконференция 2026 · «Туман»" data-site="conf26"></section>
+<!-- 08 SCHOOL -->
+<section class="page" data-s="Медиашкола · «Олива»" data-site="school"></section>
+<!-- 09 FULL PAGES -->
+<section class="page" data-s="Страницы целиком · desktop и mobile">
+  <div class="body" style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+    <div style="display:grid;grid-template-columns:1fr 120px;gap:14px;align-items:start"><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 18px 36px rgba(13,27,33,.2)"><img src="../img/media-desktop-full.jpg" style="width:100%;display:block"></div><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/media-mobile-full.jpg" style="width:100%;display:block"></div><p style="grid-column:1/-1;font-size:18px"><span class="dot" style="background:#C9D4D2;margin-right:8px"></span><b>KINOR.MEDIA</b></p></div>
+    <div style="display:grid;grid-template-columns:1fr 120px;gap:14px;align-items:start"><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 18px 36px rgba(13,27,33,.2)"><img src="../img/conf26-desktop-full.jpg" style="width:100%;display:block"></div><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/conf26-mobile-full.jpg" style="width:100%;display:block"></div><p style="grid-column:1/-1;font-size:18px"><span class="dot" style="background:#8FB9CC;margin-right:8px"></span><b>Медиаконференция 2026</b></p></div>
+    <div style="display:grid;grid-template-columns:1fr 120px;gap:14px;align-items:start"><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 18px 36px rgba(13,27,33,.2)"><img src="../img/school-desktop-full.jpg" style="width:100%;display:block"></div><div style="height:790px;overflow:hidden;border-radius:10px;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/school-mobile-full.jpg" style="width:100%;display:block"></div><p style="grid-column:1/-1;font-size:18px"><span class="dot" style="background:#B5C98A;margin-right:8px"></span><b>Медиашкола</b></p></div>
+  </div>
+</section>
+
+<!-- 10 GHOST -->
+<section class="page" data-s="Реализация в Ghost">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:60px">
+    <div style="display:grid;gap:20px;align-content:start">
+      <p class="lbl">Одна тема — три режима</p>
+      <h2 class="t">Скин = класс на body</h2>
+      <p class="lead" style="font-size:20px">Тема <b>kinor-strings</b> содержит общую разметку и компоненты. Цвета задаются CSS-переменными в <b>kinor-skins.css</b>. Режим выбирается маршрутом, шаблоном или внутренним тегом. Разметку для конференции и школы переписывать не нужно.</p>
+      <table>
+        <tr><th>Сайт</th><th>Маршрут</th><th>Шаблон</th><th>Внутренний тег</th></tr>
+        <tr><td>KINOR.MEDIA</td><td>/ · /articles/ · /library/ · /team/</td><td>index.hbs, post.hbs</td><td>—</td></tr>
+        <tr><td>Конференция</td><td>/conf26/ ← conf26.kinor.media</td><td>custom-conf26.hbs</td><td>#conf26</td></tr>
+        <tr><td>Медиашкола</td><td>/school/</td><td>custom-school.hbs</td><td>#school</td></tr>
+      </table>
+      <p class="cap" style="font-size:16px">Ghost Members — рассылки и доступ к материалам: «Письма KINOR», «Новости конференции», «Медиашкола». Это не CRM: люди, согласия и отклики живут в Supabase / Relationship OS (ADR-002, ADR-008).</p>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start">
+      <pre style="margin:0;background:#0B1A22;color:#EDF0EB;border-radius:16px;padding:24px 28px;font:15px/1.55 ui-monospace,Consolas,monospace;white-space:pre-wrap"><span style="color:#8FB9CC"># routes.yaml</span>
+routes:
+  /conf26/:
+    template: custom-conf26
+    data: page.conf26
+  /school/:
+    template: custom-school
+    data: page.school
+collections:
+  /articles/:
+    permalink: /articles/{slug}/
+    filter: tag:-hash-school+tag:-hash-conf26
+  /school/lessons/:
+    permalink: /school/{slug}/
+    filter: tag:hash-school</pre>
+      <pre style="margin:0;background:#0B1A22;color:#EDF0EB;border-radius:16px;padding:24px 28px;font:15px/1.55 ui-monospace,Consolas,monospace;white-space:pre-wrap"><span style="color:#8FB9CC">{{!-- default.hbs --}}</span>
+&lt;body class="{{body_class}}
+  {{#is "page"}}{{#page}}{{#match slug "conf26"}}skin-conf{{/match}}
+  {{#match slug "school"}}skin-school{{/match}}{{/page}}{{/is}}
+  {{#has tag="#conf26"}}skin-conf{{/has}}
+  {{#has tag="#school"}}skin-school{{/has}}
+  skin-media"&gt;</pre>
+      <p class="cap" style="font-size:16px">Если на body два класса, выигрывает скин, объявленный в CSS позже. Порядок в kinor-skins.css: media → conf → school. Для разработчика: проверить хелперы на Ghost 6 и заменить на custom-template логику, если синтаксис отличается.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 COMPONENTS -->
+<section class="page" data-s="Компоненты и контент">
+  <div class="body" style="display:grid;grid-template-columns:1.1fr .9fr;gap:60px">
+    <div>
+      <p class="lbl">Общая библиотека компонентов</p>
+      <table style="margin-top:18px">
+        <tr><th>Компонент</th><th>Media</th><th>Conf</th><th>School</th><th>Примечание</th></tr>
+        <tr><td>Шапка + лого + CTA</td><td>Войти · Подписаться</td><td>Подтвердить интерес</td><td>Узнать о наборе</td><td>дескриптор меняется</td></tr>
+        <tr><td>Hero со струнами</td><td>тёмный, статья-девиз</td><td>тёмный, дата</td><td>светлый + тёмная карточка</td><td>canvas, reduced motion</td></tr>
+        <tr><td>Карточки проектов</td><td>✓</td><td>—</td><td>—</td><td>только здесь все акценты</td></tr>
+        <tr><td>Статья: крупная + сетка</td><td>✓</td><td>анонсы</td><td>уроки</td><td>Ghost posts</td></tr>
+        <tr><td>Библиотека материалов</td><td>✓</td><td>после события</td><td>✓</td><td>доступ через Members</td></tr>
+        <tr><td>Путь с ладами</td><td>—</td><td>Learn–Meet–Build</td><td>Старт–Выпуск</td><td>до 4 шагов</td></tr>
+        <tr><td>Карточка человека</td><td>команда</td><td>спикеры</td><td>наставники</td><td>только с согласия</td></tr>
+        <tr><td>Цитата / отзыв</td><td>✓</td><td>✓</td><td>✓</td><td>Cormorant, кавычки Lamp</td></tr>
+        <tr><td>FAQ</td><td>—</td><td>✓</td><td>✓</td><td>details/summary</td></tr>
+        <tr><td>Форма</td><td>подписка</td><td>интерес F0</td><td>интерес к набору</td><td>→ Supabase intake</td></tr>
+        <tr><td>Футер семьи</td><td>✓</td><td>✓</td><td>✓</td><td>все 4 точки-акцента</td></tr>
+      </table>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="lbl">Контент в Ghost</p>
+      <div class="card" style="padding:24px;font-size:17px;line-height:1.6"><b>Теги-рубрики</b> (публичные): Аудитория · Отклик · Команда · Техника · AI · Метрики · Истории</div>
+      <div class="card" style="padding:24px;font-size:17px;line-height:1.6"><b>Внутренние теги</b> (скин и раздел): #conf26 · #school · #library · #team-story</div>
+      <div class="card" style="padding:24px;font-size:17px;line-height:1.6"><b>Авторы</b> = люди команды (страницы авторов → раздел «Команда»). Публикуются с согласия.</div>
+      <div class="card" style="padding:24px;font-size:17px;line-height:1.6"><b>Доступ к материалам:</b> Public — открытые листы; Members — подписчики; Tier/label — участники конференции и ученики школы.</div>
+      <div class="cardn" style="padding:24px;font-size:17px;line-height:1.6">Публичные тексты — профессиональные и нейтральные (решение созвона 11.09). Миссионерский смысл раскрывается в материалах и на встречах.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 12 MARKETING & PRINT -->
+<section class="page" data-s="Маркетинг, соцсети и печать">
+  <div class="body">
+    <p class="lbl">Какой скин где использовать</p>
+    <table style="margin-top:18px">
+      <tr><th style="width:280px">Материал</th><th>KINOR.MEDIA · Серебро</th><th>Конференция · Туман</th><th>Медиашкола · Олива</th></tr>
+      <tr><td>Аватар канала / чата</td><td>знак 5 струн, Night, серебряные струны</td><td>знак, Night, туманные струны</td><td>знак на светлом Olive-фоне</td></tr>
+      <tr><td>Посты и Stories</td><td>статьи, материалы, истории команды</td><td>Save the Date, спикеры, «Вопрос недели»</td><td>набор, уроки, работы учеников</td></tr>
+      <tr><td>Email-шапка</td><td>«Письма KINOR»</td><td>«Новости конференции»</td><td>«Медиашкола»</td></tr>
+      <tr><td>Экран и трансляция</td><td>заставки видео, подкасты</td><td>титры, нижние трети, служебные экраны</td><td>заставки уроков, вебинары</td></tr>
+      <tr><td>Печать</td><td>визитки команды, партнёрский PDF</td><td>бейджи, плакаты, roll-up, навигация</td><td>рабочие тетради, сертификаты, наклейки</td></tr>
+      <tr><td>Краска CMYK ≈ / Pantone ≈</td><td>20·10·13·0 · 877 C металлик или Cool Gray 2 C</td><td>42·15·15·0 · 550 C</td><td>30·5·55·0 · 578 C</td></tr>
+      <tr><td>Соотношение тёмного и светлого</td><td>≈ 35 / 65</td><td>≈ 55 / 45</td><td>≈ 25 / 75</td></tr>
+    </table>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px;font-size:18px;line-height:1.5">
+      <div class="card" style="padding:24px"><b>Один акцент на макет.</b> Совместные материалы (например, «конференция + школа») делаются в Серебре с цветными точками проектов.</div>
+      <div class="card" style="padding:24px"><b>Тёплая струна не меняется</b> ни в одном скине: Lamp #F2B35B на тёмном, Lamp ink #D9892A на светлом.</div>
+      <div class="card" style="padding:24px"><b>Шаблоны:</b> соцсети, email, слайды и печать берём из брендбука «Струна» и меняем только переменные скина.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 HANDOFF -->
+<section class="page" data-s="Передача команде">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:70px">
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="lbl">Что получает команда</p>
+      <table>
+        <tr><td style="width:250px">Живые макеты</td><td>dimmyz.github.io/kmc26-design-a/sites/</td></tr>
+        <tr><td>CSS скинов</td><td>sites/assets/kinor-skins.css</td></tr>
+        <tr><td>Токены</td><td>sites/assets/kinor-tokens.json</td></tr>
+        <tr><td>Струны и знак (JS)</td><td>sites/assets/kinor-strings.js</td></tr>
+        <tr><td>Логотипы SVG</td><td>brandbook/logo/ (перекрасить под скин)</td></tr>
+        <tr><td>Брендбук</td><td>brandbook/ · PDF 49 стр.</td></tr>
+        <tr><td>Варианты акцента</td><td>palettes/ · PDF 15 стр.</td></tr>
+      </table>
+      <p class="lbl" style="margin-top:14px">Кому что</p>
+      <p style="font-size:18px;line-height:1.6"><b>Разработчик Ghost</b> — стр. 5, 10, 11 и файлы assets. <b>Дизайнер</b> — стр. 4–9 и брендбук. <b>Маркетинг и SMM</b> — стр. 12 и шаблоны брендбука. <b>Печать</b> — CMYK и Pantone со стр. 12, цветопроба обязательна. <b>AI-агенты</b> — kinor-tokens.json и правило «одна тёплая струна».</p>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="lbl">Нужно решить</p>
+      <div style="display:grid;gap:14px;font-size:19px;line-height:1.5">
+        <p style="display:flex;gap:14px"><span class="fret-s"></span>Обновить ADR-008: там KMC26 описан как «ярче и смелее», а выбран спокойный «Туман».</p>
+        <p style="display:flex;gap:14px"><span class="fret-s"></span>Адрес школы: kinor.media/school или school.kinor.media.</p>
+        <p style="display:flex;gap:14px"><span class="fret-s"></span>Название: подтвердить «Медиашкола KINOR / KINOR Media School».</p>
+        <p style="display:flex;gap:14px"><span class="fret-s"></span>Обновить брендбук и сайт-концепт в «Тумане» (сейчас они в бирюзе).</p>
+        <p style="display:flex;gap:14px"><span class="fret-s warm-s"></span>Люди, фото, отзывы, контакты — только подтверждённые и с согласия.</p>
+        <p style="display:flex;gap:14px"><span class="fret-s"></span>Цветопроба «Серебра» (металлик или серый) и «Оливы» перед тиражом.</p>
+      </div>
+      <p class="cap" style="margin-top:12px">Дизайн-схема v1.0 · 17.09.2026 · концепт для обсуждения. Не утверждает бренд, архитектуру и публичные тексты.</p>
+    </div>
+  </div>
+</section>
+</body></html>

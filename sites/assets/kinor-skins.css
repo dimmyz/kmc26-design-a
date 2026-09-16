@@ -23,6 +23,12 @@
 .skin-media { --accent:#C9D4D2; --accent-ink:#4A5A5C; --light:#EEF0EE; --light-2:#E2E6E4; }
 .skin-conf  { --accent:#8FB9CC; --accent-ink:#3B6A80; --light:#EDF0F1; --light-2:#DDE6EA; }
 .skin-school{ --accent:#B5C98A; --accent-ink:#55692F; --light:#F1F2EA; --light-2:#E4E8D6; --r-card:24px; }
+/* conference alternatives (v1.1) */
+.skin-sky   { --accent:#6CB4FF; --accent-ink:#1F5FA6; --light:#F2EFE8; --light-2:#E7E2D8; }                 /* «Небо ночное»: dark-first, high contrast, warm light blocks */
+.skin-violet{ --accent:#A7A3FF; --accent-ink:#5147C7; --light:#F4F2EE; --light-2:#E9E6F3; --r-card:24px; }  /* «Фиалка»: light-first like Olive */
+.skin-solar { --night:#002B36; --deep:#073642; --surface:#0A3A47; --accent:#4FA3E3; --accent-ink:#1F6FB2;
+              --light:#FDF6E3; --light-2:#EEE8D5; --lamp-ink:#B58900; --ink:#073642; --ink-2:#586E75; --r-card:22px; } /* «Солярис»: Solarized-inspired paper */
+.skin-sky{background:var(--night);color:var(--on-dark)}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}

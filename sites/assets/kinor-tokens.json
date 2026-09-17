@@ -8,8 +8,14 @@
       "night": "#0B1A22",
       "deep": "#163847",
       "surface": "#10262F",
-      "lamp": { "value": "#F2B35B", "role": "the one warm string = a person; never used as a UI accent" },
-      "lampInk": { "value": "#D9892A", "role": "warm string on light surfaces" },
+      "lamp": {
+        "value": "#F2B35B",
+        "role": "the one warm string = a person; never used as a UI accent"
+      },
+      "lampInk": {
+        "value": "#D9892A",
+        "role": "warm string on light surfaces"
+      },
       "ink": "#0D1B21",
       "ink2": "#44555B",
       "white": "#FFFFFF",
@@ -21,9 +27,22 @@
       "serif": "Cormorant Garamond Italic (400/500) — human phrases, quotes only",
       "hebrew": "Rubik"
     },
-    "radius": { "pill": "999px", "card": "18px", "field": "12px" },
-    "space": { "gutter": "clamp(16px,4vw,56px)", "section": "clamp(72px,9vw,128px)", "container": "1240px" },
-    "motion": { "breath": "7px · 3.2 rad/s", "pluck": "every 4.2–4.6 s, amplitude 14–16, decay e^-1.1t", "propagation": "55 ms per string", "reducedMotion": "static frame" }
+    "radius": {
+      "pill": "999px",
+      "card": "18px",
+      "field": "12px"
+    },
+    "space": {
+      "gutter": "clamp(16px,4vw,56px)",
+      "section": "clamp(72px,9vw,128px)",
+      "container": "1240px"
+    },
+    "motion": {
+      "breath": "7px · 3.2 rad/s",
+      "pluck": "every 4.2–4.6 s, amplitude 14–16, decay e^-1.1t",
+      "propagation": "55 ms per string",
+      "reducedMotion": "static frame"
+    }
   },
   "skins": {
     "media": {
@@ -66,7 +85,70 @@
       "balance": "light-first learning (≈25% dark / 75% light)",
       "mood": "growth, practice, younger and friendly"
     },
-    "radio": { "site": "kinor.live", "name": "Бирюза", "accent": "#37C4AA", "accentInk": "#0B7263", "note": "existing Radio Kinor site — reference only" },
-    "labs": { "site": "future", "name": "Лаванда", "accent": "#9DA4FF", "accentInk": "#4B50C2", "note": "reserved for KINOR Labs / Tech" }
+    "radio": {
+      "site": "kinor.live",
+      "name": "Бирюза",
+      "accent": "#37C4AA",
+      "accentInk": "#0B7263",
+      "note": "existing Radio Kinor site — reference only"
+    },
+    "labs": {
+      "site": "future",
+      "name": "Лаванда",
+      "accent": "#9DA4FF",
+      "accentInk": "#4B50C2",
+      "note": "reserved for KINOR Labs / Tech"
+    }
+  },
+  "workingDecision": {
+    "version": "0.1",
+    "date": "2026-09-17",
+    "status": "DRAFT — working decision to start development; palette may change, markup must not",
+    "css": "sites/standard/kinor-web-tokens.css",
+    "bodyClasses": {
+      "kn-media": {
+        "site": "kinor.media",
+        "palette": "Серебро",
+        "hero": "light",
+        "accent": "#C9D4D2",
+        "accentInk": "#4A5A5C",
+        "light": "#EEF0EE",
+        "light2": "#E2E6E4",
+        "page": "light",
+        "build": "now"
+      },
+      "kn-conf": {
+        "site": "conf26.kinor.media → /conf26/",
+        "palette": "Небо ночное",
+        "hero": "dark",
+        "accent": "#6CB4FF",
+        "accentInk": "#1F5FA6",
+        "light": "#F2EFE8",
+        "light2": "#E7E2D8",
+        "page": "night",
+        "build": "now"
+      },
+      "kn-school": {
+        "site": "kinor.media/school",
+        "palette": "Олива",
+        "hero": "light",
+        "build": "later"
+      },
+      "kn-labs": {
+        "site": "Kinor Labs / Relationship OS",
+        "palette": "Фиалка",
+        "hero": "light",
+        "build": "later"
+      },
+      "radio": {
+        "site": "kinor.live",
+        "palette": "Бирюза",
+        "note": "separate Ghost install, unchanged"
+      }
+    },
+    "lampText": {
+      "value": "#9A5A14",
+      "role": "warm TEXT on light surfaces (lamp-ink #D9892A is strokes only)"
+    }
   }
 }

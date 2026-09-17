@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Семья KINOR — рабочее решение v0.1</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Рабочее решение по цветам сайтов KINOR: KINOR.MEDIA «Серебро» со светлым hero, Радио Кинор, Медиаконференция «Небо ночное», Медиашкола «Олива», Kinor Labs «Фиалка».">
+<meta name="theme-color" content="#EEF0EE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Семья KINOR — рабочее решение v0.1">
+<meta property="og:description" content="Пять сайтов, пять характеров, один знак. Черновик для старта разработки.">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/sites/img/og-family.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../brandbook/logo/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/kinor-skins.css">
+<style>
+.hero{padding-block:clamp(40px,6vw,80px) clamp(48px,6vw,80px)}
+.hero .h1{font-size:clamp(40px,5.4vw,76px)}
+.strip{display:flex;height:10px;border-radius:999px;overflow:hidden;max-width:520px}
+.strip i{flex:1}
+.fam-list{display:grid;gap:28px}
+.site{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(18px,2.4vw,28px);border-radius:28px;background:var(--white);text-decoration:none;color:var(--ink);border:1px solid var(--hair-light);transition:box-shadow .2s,transform .2s}
+.site:hover{box-shadow:0 24px 48px -28px rgba(13,27,33,.35);transform:translateY(-2px)}
+.site img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:16px;display:block;border:1px solid var(--hair-light)}
+.site .n{font:600 13px/1 var(--f-sans);letter-spacing:.16em;color:var(--ink-2)}
+.site h2{font:600 clamp(28px,3vw,40px)/1.05 var(--f-sans);letter-spacing:-.02em}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px;margin:0}
+.meta dt{color:var(--ink-2)}
+.meta dd{margin:0;font-weight:500}
+.sw{display:flex;gap:6px}
+.sw i{width:34px;height:34px;border-radius:10px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.12)}
+.status{justify-self:start;display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;font:600 12px/1 var(--f-sans);letter-spacing:.06em;text-transform:uppercase}
+.status.now{background:var(--night);color:var(--on-dark)}
+.status.now::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lamp)}
+.status.live{background:#DDF3EE;color:#0B7263}
+.status.later{background:var(--light-2);color:var(--ink-2)}
+.docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.doc{padding:22px;border-radius:18px;border:1px solid var(--hair-dark);display:grid;gap:8px;text-decoration:none;color:var(--on-dark)}
+.doc:hover{border-color:var(--accent)}
+@media (max-width:860px){.site{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="skin-media">
+<div class="draft">Рабочее решение v0.1 · 17.09.2026 · черновик для старта разработки, может измениться</div>
+
+<div class="light">
+<header class="k-header">
+  <div class="wrap">
+    <a class="k-logo" href="#"><span class="mk" data-size="40"></span><span><b>KINOR</b><small>Семья сайтов · рабочее решение</small></span></a>
+    <div class="k-actions"><a class="btn btn-ghost btn-sm" href="../">Все варианты</a><a class="btn btn-primary btn-sm" href="../standard/">Дизайн-стандарт</a></div>
+  </div>
+</header>
+<section class="hero">
+  <div class="wrap stack" style="gap:24px;max-width:1000px;margin-inline:auto 0">
+    <p class="eyebrow">Семья KINOR · рабочее решение v0.1</p>
+    <h1 class="h1">Пять сайтов, пять характеров, один&nbsp;знак</h1>
+    <p class="lead">С этим распределением цветов начинаем разработку. Первыми строим KINOR.MEDIA на Ghost и лендинг Медиаконференции на том же движке. Страница со всеми вариантами для сравнения остаётся, окончательное решение — позже.</p>
+    <div class="strip" aria-hidden="true"><i style="background:#C9D4D2"></i><i style="background:#37C4AA"></i><i style="background:#6CB4FF"></i><i style="background:#B5C98A"></i><i style="background:#A7A3FF"></i></div>
+  </div>
+</section>
+</div>
+
+<main>
+<section class="light2" style="padding-top:clamp(40px,5vw,72px)">
+  <div class="wrap fam-list">
+
+    <a class="site" href="../media-light/">
+      <img src="../img/media-light-desktop-hero.jpg" alt="KINOR.MEDIA — «Серебро» со светлым hero">
+      <div class="stack" style="gap:16px">
+        <span class="n">01 · ЗОНТИЧНЫЙ САЙТ</span>
+        <h2>KINOR.MEDIA</h2>
+        <span class="status now">строим сейчас · Ghost</span>
+        <dl class="meta"><dt>Скин</dt><dd>«Серебро» · <code>skin-media</code></dd><dt>Hero</dt><dd>светлый, тёмная карточка со струнами</dd><dt>Адрес</dt><dd>kinor.media</dd></dl>
+        <div class="sw"><i style="background:#C9D4D2"></i><i style="background:#4A5A5C"></i><i style="background:#EEF0EE"></i><i style="background:#0B1A22"></i><i style="background:#F2B35B"></i></div>
+      </div>
+    </a>
+
+    <a class="site" href="https://kinor.live/" target="_blank" rel="noopener">
+      <img src="../img/live-desktop-hero.jpg" alt="Радио Кинор — kinor.live">
+      <div class="stack" style="gap:16px">
+        <span class="n">02 · РАДИО</span>
+        <h2>Радио Кинор</h2>
+        <span class="status live">работает</span>
+        <dl class="meta"><dt>Скин</dt><dd>«Бирюза» · тёмно-зелёный, свой Ghost</dd><dt>Hero</dt><dd>тёмный</dd><dt>Адрес</dt><dd>kinor.live</dd></dl>
+        <div class="sw"><i style="background:#37C4AA"></i><i style="background:#0B7263"></i><i style="background:#0C1A24"></i><i style="background:#F2B35B"></i></div>
+      </div>
+    </a>
+
+    <a class="site" href="../conf26-sky/">
+      <img src="../img/conf26-sky-desktop-hero.jpg" alt="Медиаконференция 2026 — «Небо ночное»">
+      <div class="stack" style="gap:16px">
+        <span class="n">03 · СОБЫТИЕ</span>
+        <h2>Медиаконференция 2026</h2>
+        <span class="status now">строим сейчас · лендинг в той же теме</span>
+        <dl class="meta"><dt>Скин</dt><dd>«Небо ночное» · <code>skin-sky</code></dd><dt>Hero</dt><dd>тёмный, глубокий фон, голубой акцент</dd><dt>Адрес</dt><dd>conf26.kinor.media → /conf26/</dd></dl>
+        <div class="sw"><i style="background:#6CB4FF"></i><i style="background:#1F5FA6"></i><i style="background:#F2EFE8"></i><i style="background:#0B1A22"></i><i style="background:#F2B35B"></i></div>
+      </div>
+    </a>
+
+    <a class="site" href="../school/">
+      <img src="../img/school-desktop-hero.jpg" alt="Медиашкола — «Олива»">
+      <div class="stack" style="gap:16px">
+        <span class="n">04 · ОБУЧЕНИЕ</span>
+        <h2>Медиашкола</h2>
+        <span class="status later">позже</span>
+        <dl class="meta"><dt>Скин</dt><dd>«Олива» · <code>skin-school</code></dd><dt>Hero</dt><dd>светлый</dd><dt>Адрес</dt><dd>kinor.media/school</dd></dl>
+        <div class="sw"><i style="background:#B5C98A"></i><i style="background:#55692F"></i><i style="background:#F1F2EA"></i><i style="background:#0B1A22"></i><i style="background:#F2B35B"></i></div>
+      </div>
+    </a>
+
+    <a class="site" href="../ros-violet/">
+      <img src="../img/ros-violet-desktop-hero.jpg" alt="Kinor Labs — Relationship OS, «Фиалка»">
+      <div class="stack" style="gap:16px">
+        <span class="n">05 · KINOR LABS</span>
+        <h2>Relationship OS</h2>
+        <span class="status later">позже</span>
+        <dl class="meta"><dt>Скин</dt><dd>«Фиалка» · <code>skin-violet</code></dd><dt>Hero</dt><dd>светлый, макет продукта</dd><dt>Адрес</dt><dd>рабочий пример: rel.kinor.media</dd></dl>
+        <div class="sw"><i style="background:#A7A3FF"></i><i style="background:#5147C7"></i><i style="background:#F4F2EE"></i><i style="background:#0B1A22"></i><i style="background:#F2B35B"></i></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Для команды разработки</p><h2 class="h2">Основания для работы</h2></div>
+    <div class="docs">
+      <a class="doc" href="../standard/"><b>Дизайн-стандарт v0.1</b><span class="small muted">KINOR.MEDIA + лендинг конференции · страницы и PDF</span></a>
+      <a class="doc" href="../standard/kinor-web-tokens.css"><b>kinor-web-tokens.css</b><span class="small muted">токены рабочего решения</span></a>
+      <a class="doc" href="../assets/kinor-skins.css"><b>kinor-skins.css</b><span class="small muted">общая тема со всеми скинами</span></a>
+      <a class="doc" href="../assets/kinor-strings.js"><b>kinor-strings.js</b><span class="small muted">знак, линия-струна, поле струн</span></a>
+      <a class="doc" href="../../brandbook/"><b>Брендбук «Струна»</b><span class="small muted">логотип, типографика, носители</span></a>
+      <a class="doc" href="../"><b>Все варианты</b><span class="small muted">страница сравнения остаётся</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="k-footer">
+  <div class="wrap">
+    <div class="fam">
+      <a href="../media-light/"><span class="dot" style="background:#C9D4D2"></span>KINOR.MEDIA</a>
+      <a href="https://kinor.live/"><span class="dot" style="background:#37C4AA"></span>Радио Кинор</a>
+      <a href="../conf26-sky/"><span class="dot" style="background:#6CB4FF"></span>Медиаконференция 2026</a>
+      <a href="../school/"><span class="dot" style="background:#B5C98A"></span>Медиашкола</a>
+    </div>
+    <div class="bottom"><span>KINOR · семья сайтов · рабочее решение v0.1</span><span>design concept · 17.09.2026</span></div>
+  </div>
+</footer>
+<script src="../assets/kinor-strings.js"></script>
+</body>
+</html>

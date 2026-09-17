@@ -1,0 +1,396 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>KINOR — Дизайн-стандарт сайтов v0.1</title><meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Onest:wght@400;500;600;700&display=swap">
+<style>@page{size:1920px 1080px;margin:0}
+:root{--night:#0B1A22;--deep:#163847;--surface:#10262F;--teal:#37C4AA;--teal-ink:#0B7263;--lamp:#F2B35B;--lamp-ink:#D9892A;--stone:#EDF0EB;--stone2:#E1E6E0;--ink:#0D1B21;--ink2:#44555B;--on2:rgba(237,240,235,.72);--hair:rgba(13,27,33,.14);--hairn:rgba(237,240,235,.14);
+--sans:"Onest",Arial,system-ui,sans-serif;--serif:"Cormorant Garamond",Georgia,serif}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:#56625f;padding:40px;display:grid;gap:40px;justify-content:center;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+@media print{body{padding:0;gap:0;background:none;display:block}.page{break-after:page}}
+p,h1,h2,h3{margin:0}
+.page{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--stone);color:var(--ink)}
+.page.night{background:var(--night);color:var(--stone)}
+.page.white{background:#fff}
+.page.deep{background:var(--deep);color:var(--stone)}
+.run,.foot{position:absolute;left:120px;right:120px;display:flex;justify-content:space-between;font:600 13px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);z-index:5}
+.run{top:52px}.foot{bottom:48px;letter-spacing:.12em}
+.night .run,.night .foot,.deep .run,.deep .foot{color:rgba(237,240,235,.5)}
+.body{position:absolute;left:120px;right:120px;top:130px;bottom:120px}
+.t{font:600 60px/1.04 var(--sans);letter-spacing:-.02em;text-wrap:balance}
+.t2{font:600 36px/1.1 var(--sans);letter-spacing:-.015em}
+.lead{font-size:23px;line-height:1.5;color:var(--ink2);max-width:54ch}
+.night .lead,.deep .lead{color:var(--on2)}
+.lbl{font:600 14px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--teal-ink)}
+.night .lbl,.deep .lbl{color:var(--teal)}
+.cap{font-size:16px;line-height:1.45;color:var(--ink2)}
+.night .cap,.deep .cap{color:var(--on2)}
+.serif{font-family:var(--serif);font-style:italic;font-weight:500}
+.row{display:flex;gap:32px}
+.g{display:grid;gap:28px}
+.card{background:#fff;border-radius:18px}
+.cardn{background:var(--night);color:var(--stone);border-radius:18px}
+.shadow{box-shadow:0 30px 60px rgba(13,27,33,.22),0 4px 12px rgba(13,27,33,.12)}
+.sc{width:calc(var(--w)*1px*var(--k));height:calc(var(--h)*1px*var(--k));overflow:hidden;position:relative;flex:none}
+.sc>.in{width:calc(var(--w)*1px);height:calc(var(--h)*1px);transform:scale(var(--k));transform-origin:0 0;position:absolute;left:0;top:0;overflow:hidden}
+.vid{background:radial-gradient(60% 70% at 38% 42%,#8a9a9c 0%,#4c5d61 35%,#1d2a2e 70%,#0c1418 100%)}
+.who{position:absolute;border-radius:50% 50% 30% 30%/60% 60% 30% 30%;background:rgba(10,16,19,.55)}
+.ok{color:#0B7263;font-weight:600}.no{color:#B4462B;font-weight:600}
+table{border-collapse:collapse;width:100%}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--hair);vertical-align:top;font-size:17px}
+th{font:600 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.num{font-variant-numeric:tabular-nums}
+.x{position:absolute;inset:0;pointer-events:none}
+.opener .big{position:absolute;left:120px;bottom:150px}
+.opener .n{font:600 220px/0.8 var(--sans);letter-spacing:-.05em;color:var(--teal)}
+.opener h1{font:600 110px/1 var(--sans);letter-spacing:-.03em;margin-top:30px}
+.opener .sub{margin-top:26px;font-size:26px;color:var(--on2);max-width:44ch;line-height:1.45}
+
+/* standard-specific additions on top of brandbook core.css */
+.lbl{color:#4A5A5C}
+.night .lbl{color:#C9D4D2}
+.p{font-size:18px;line-height:1.5}
+.sw{font-size:14px;line-height:1.4;background:#fff;border-radius:10px;overflow:hidden;padding:0 10px 10px}
+.sw i{display:block;height:64px;margin:0 -10px 8px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.08)}
+.sw .cap{font-size:13px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;vertical-align:-1px}
+code{font:500 .88em ui-monospace,Consolas,monospace;background:rgba(13,27,33,.07);padding:1px 6px;border-radius:5px}
+pre{margin:0;background:#0B1A22;color:#EDF0EB;border-radius:16px;padding:22px 26px;font:15px/1.55 ui-monospace,Consolas,monospace;white-space:pre}
+pre span{color:#6CB4FF}
+.ul{margin:0;padding-left:20px;display:grid;gap:9px;font-size:17px;line-height:1.45}
+.pair{display:grid;grid-template-columns:1fr 1fr;margin-top:14px;border-radius:18px;overflow:hidden}
+.pair>div{padding:28px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.lt{background:var(--l)}
+.dk{background:#0B1A22}
+.b1,.b2{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:999px;font:600 16px/1 var(--sans)}
+.lt .b1{background:var(--ai);color:#fff}
+.dk .b1{background:var(--a);color:#0B1A22}
+.lt .b2{border:1.5px solid rgba(13,27,33,.13)}
+.dk .b2{border:1.5px solid rgba(237,240,235,.13);color:#EDF0EB}
+.tg{font:600 11px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:7px 10px;border-radius:999px}
+.lt .tg{background:var(--l2);color:var(--ai)}
+.dk .tg{background:rgba(237,240,235,.08);color:var(--a)}
+.fr{display:flex;gap:10px}
+.fr i{width:14px;height:14px;border-radius:50%;border:2.5px solid var(--ai)}
+.dk .fr i{border-color:var(--a)}
+.fr i.on{border:0;background:#D9892A}
+.dk .fr i.on{background:#F2B35B}
+table td,table th{vertical-align:middle}
+</style><script>// Design standard page helpers: static mark, static strings field, running heads.
+const MARK = { sw: 5, l: [[8,26,38],[16,19,45],[24,12,52],[32,5,59],[40,12,52],[48,19,45],[56,26,38]], c: 3, b: 8 };
+function mk(a, s, warm) {
+  return `<svg width="${s}" height="${s}" viewBox="0 0 64 64" style="display:block"><g stroke-linecap="round" stroke-width="${MARK.sw}" fill="none">${
+    MARK.l.map(([x, y1, y2], i) => i === MARK.c ? `<path stroke="${warm}" d="M${x} ${y1} Q${x + MARK.b} 32 ${x} ${y2}"/>` : `<line stroke="${a}" x1="${x}" y1="${y1}" x2="${x}" y2="${y2}"/>`).join('')}</g></svg>`;
+}
+const rgb = h => [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16)).join(',');
+function field(c) {
+  const d = c.dataset, W = +d.w, H = +d.h;
+  c.width = W * 2; c.height = H * 2; c.style.width = W + 'px'; c.style.height = H + 'px';
+  if (!c.style.position) c.style.display = 'block';
+  const x = c.getContext('2d'); x.scale(2, 2);
+  const gap = +(d.gap || 30), n = Math.ceil(W / gap) + 1, k = Math.round(n * +(d.warm || .7));
+  for (let i = 0; i < n; i++) {
+    const px = i * gap, dist = Math.abs(i - k), one = i === k;
+    const off = (one ? 22 : 10 * Math.exp(-dist / 4)) * Math.sin(1.3 - dist * .45);
+    const ramp = .08 + .5 * Math.max(0, Math.min(1, (px / W - .2) / .6));
+    const g = x.createLinearGradient(0, 0, 0, H), col = one ? '242,179,91' : rgb(d.accent), a = one ? 1 : ramp;
+    g.addColorStop(0, `rgba(${col},0)`); g.addColorStop(.5, `rgba(${col},${a})`); g.addColorStop(1, `rgba(${col},0)`);
+    x.strokeStyle = g; x.lineWidth = one ? 3 : 1.3;
+    x.beginPath(); x.moveTo(px, 0); x.quadraticCurveTo(px + off * 2, H / 2, px, H); x.stroke();
+  }
+}
+document.addEventListener('DOMContentLoaded', () => document.fonts.ready.then(() => {
+  document.querySelectorAll('.mkx').forEach(e => e.innerHTML = mk(e.dataset.a, +e.dataset.s, '#F2B35B'));
+  document.querySelectorAll('canvas.Fc').forEach(c => {
+    if (c.closest('.page').dataset.bare) Object.assign(c.style, { position: 'absolute', left: '0', top: '0' });
+    field(c);
+  });
+  [...document.querySelectorAll('.page')].forEach((p, i) => {
+    if (p.dataset.bare) return;
+    p.insertAdjacentHTML('beforeend', `<div class="run"><span>KINOR · Дизайн-стандарт сайтов · рабочее решение</span><span>${p.dataset.s || ''}</span></div><div class="foot"><span class="num">${String(i + 1).padStart(2, '0')}</span><span>v0.1 · 17.09.2026 · черновик для разработки</span></div>`);
+  });
+  Promise.all([...document.images].map(im => im.complete ? 1 : new Promise(r => { im.onload = im.onerror = r; })))
+    .then(() => { document.body.dataset.ready = '1'; });
+}));
+</script></head><body><!-- 01 COVER -->
+<section class="page night" data-bare="1">
+  <canvas class="Fc" data-w="1920" data-h="1080" data-accent="#6CB4FF" data-warm=".58"></canvas>
+  <div style="position:absolute;left:120px;top:110px;display:flex;gap:18px;align-items:center"><span class="mkx" data-a="#C9D4D2" data-s="64"></span><span style="font:700 34px/1 var(--sans);letter-spacing:.2em">KINOR</span></div>
+  <div style="position:absolute;left:120px;top:300px;width:900px">
+    <p class="lbl" style="font-size:18px;color:#C9D4D2">Дизайн-стандарт · v0.1 · рабочее решение</p>
+    <h1 style="font:600 104px/.96 var(--sans);letter-spacing:-.035em;margin-top:26px">Сайты KINOR<br>на Ghost</h1>
+    <p style="margin-top:30px;font-size:27px;line-height:1.45;color:var(--on2)">KINOR.MEDIA — «Серебро» со светлым hero.<br>Лендинг Медиаконференции — «Небо ночное».<br>Одна тема, один знак, одна тёплая струна.</p>
+  </div>
+  <div style="position:absolute;right:120px;top:190px;width:640px;display:grid;gap:26px">
+    <div style="border-radius:14px;overflow:hidden;box-shadow:0 0 0 2px #C9D4D2,0 30px 60px rgba(0,0,0,.4)"><img src="../img/media-light-desktop-hero.jpg" style="width:100%;display:block"></div>
+    <div style="border-radius:14px;overflow:hidden;box-shadow:0 0 0 2px #6CB4FF,0 30px 60px rgba(0,0,0,.4)"><img src="../img/conf26-sky-desktop-hero.jpg" style="width:100%;display:block"></div>
+  </div>
+  <p style="position:absolute;left:120px;bottom:70px;font-size:17px;color:var(--on2)">17 сентября 2026 · для архитектора и разработчиков · черновик: палитра может измениться, разметка и логика — нет</p>
+</section>
+
+<!-- 02 DECISION -->
+<section class="page" data-s="Рабочее решение">
+  <div class="body">
+    <p class="lbl">Распределение цветов · v0.1</p>
+    <h2 class="t" style="margin-top:18px">Пять сайтов — пять характеров. Строим первые два.</h2>
+    <table style="margin-top:40px">
+      <tr><th style="width:150px">Экран</th><th>Проект</th><th>Палитра</th><th>Hero</th><th>Адрес · движок</th><th>Класс body</th><th>Статус</th></tr>
+      <tr><td><img src="../img/media-light-desktop-hero.jpg" style="width:130px;border-radius:6px;display:block"></td><td><b>KINOR.MEDIA</b></td><td><span class="dot" style="background:#C9D4D2"></span> «Серебро»</td><td>светлый</td><td>kinor.media · Ghost, тема kinor-media</td><td><code>kn-media</code> (по умолч.)</td><td><b style="color:#9A5A14">строим сейчас</b></td></tr>
+      <tr><td><img src="../img/conf26-sky-desktop-hero.jpg" style="width:130px;border-radius:6px;display:block"></td><td><b>Медиаконференция 2026</b></td><td><span class="dot" style="background:#6CB4FF"></span> «Небо ночное»</td><td>тёмный</td><td>conf26.kinor.media → /conf26/ · та же тема</td><td><code>kn-conf</code></td><td><b style="color:#9A5A14">строим сейчас</b></td></tr>
+      <tr><td><img src="../img/live-desktop-hero.jpg" style="width:130px;border-radius:6px;display:block"></td><td>Радио Кинор</td><td><span class="dot" style="background:#37C4AA"></span> «Бирюза»</td><td>тёмный</td><td>kinor.live · отдельный Ghost</td><td>—</td><td>работает, не трогаем</td></tr>
+      <tr><td><img src="../img/school-desktop-hero.jpg" style="width:130px;border-radius:6px;display:block"></td><td>Медиашкола</td><td><span class="dot" style="background:#B5C98A"></span> «Олива»</td><td>светлый</td><td>kinor.media/school · та же тема</td><td><code>kn-school</code></td><td>позже · имя класса зарезервировать</td></tr>
+      <tr><td><img src="../img/ros-violet-desktop-hero.jpg" style="width:130px;border-radius:6px;display:block"></td><td>Kinor Labs · Relationship OS</td><td><span class="dot" style="background:#A7A3FF"></span> «Фиалка»</td><td>светлый</td><td>сайт продукта + React-приложение</td><td><code>kn-labs</code></td><td>позже</td></tr>
+    </table>
+    <p class="cap" style="margin-top:26px;font-size:17px">Живые страницы: dimmyz.github.io/kmc26-design-a/sites/family/ — рабочее решение · /sites/ — все варианты для сравнения (остаются до окончательного решения).</p>
+  </div>
+</section>
+
+<!-- 03 FOUNDATION -->
+<section class="page" data-s="Общая основа">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:70px">
+    <div style="display:grid;gap:22px;align-content:start">
+      <p class="lbl">Цвета основы — одинаковы во всех проектах</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+        <div class="sw"><i style="background:#0B1A22"></i><b>Night</b> #0B1A22<br><span class="cap">основной тёмный</span></div>
+        <div class="sw"><i style="background:#163847"></i><b>Deep</b> #163847<br><span class="cap">тёмные секции</span></div>
+        <div class="sw"><i style="background:#10262F"></i><b>Surface</b> #10262F<br><span class="cap">карточки на тёмном</span></div>
+        <div class="sw"><i style="background:#F2B35B"></i><b>Lamp</b> #F2B35B<br><span class="cap">тёплая струна · 9.6:1</span></div>
+        <div class="sw"><i style="background:#D9892A"></i><b>Lamp ink</b> #D9892A<br><span class="cap">струна на светлом — не текст</span></div>
+        <div class="sw"><i style="background:#9A5A14"></i><b>Lamp text</b> #9A5A14<br><span class="cap">тёплый текст на светлом · 4.8:1</span></div>
+        <div class="sw"><i style="background:#0D1B21"></i><b>Ink</b> #0D1B21<br><span class="cap">текст · 15.3:1</span></div>
+        <div class="sw"><i style="background:#44555B"></i><b>Ink 2</b> #44555B<br><span class="cap">вторичный · 6.8:1</span></div>
+        <div class="sw"><i style="background:#EDF0EB"></i><b>On dark</b> #EDF0EB<br><span class="cap">текст на тёмном · 15.4:1</span></div>
+      </div>
+      <div style="padding:22px 26px;border-radius:16px;background:#0B1A22;color:#EDF0EB;display:flex;gap:22px;align-items:center"><span class="mkx" data-a="#C9D4D2" data-s="56"></span><p style="font-size:19px;line-height:1.45"><b>Правило одной струны.</b> Тёплый цвет — только «человек»: одна струна, один лад, одна фраза. Кнопки, ссылки и иконки — всегда цвет проекта.</p></div>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="lbl">Типографика</p>
+      <div style="display:grid;gap:14px;padding:28px;border-radius:18px;background:#fff">
+        <p style="font:600 76px/.98 var(--sans);letter-spacing:-.025em">Onest 600</p>
+        <table><tr><th>Роль</th><th>Размер (clamp)</th><th>Начертание</th></tr>
+          <tr><td>H1 hero</td><td class="num">40 → 76–96 px · lh .98</td><td>600 · −0.025em</td></tr>
+          <tr><td>H2 секции</td><td class="num">32 → 56 px · lh 1.04</td><td>600 · −0.02em</td></tr>
+          <tr><td>H3 карточки</td><td class="num">20 → 24 px</td><td>600</td></tr>
+          <tr><td>Lead</td><td class="num">17 → 20 px · lh 1.55 · 56ch</td><td>400</td></tr>
+          <tr><td>Текст</td><td class="num">17 px · lh 1.6</td><td>400</td></tr>
+          <tr><td>Eyebrow</td><td class="num">12 px · caps · +0.18em</td><td>600</td></tr>
+        </table>
+        <p style="font:italic 500 44px/1.05 var(--serif);color:#9A5A14">за экраном — человек</p>
+        <p class="cap">Cormorant Garamond Italic — только «человеческие» фразы и цитаты, не для интерфейса. Иврит — Rubik. Все шрифты Google Fonts, OFL; в production — self-host woff2 с кириллицей.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 MEDIA SKIN -->
+<section class="page" data-s="KINOR.MEDIA · «Серебро» · светлый hero">
+  <div class="body" style="display:grid;grid-template-columns:1060px 1fr;gap:56px">
+    <div style="display:grid;gap:18px;align-content:start">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(13,27,33,.22)"><img src="../img/media-light-desktop-hero.jpg" style="width:100%;display:block"></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+        <div class="sw"><i style="background:#C9D4D2"></i><b>accent</b> #C9D4D2<br><span class="cap">на тёмном · 11.7:1</span></div>
+        <div class="sw"><i style="background:#4A5A5C"></i><b>accent-ink</b> #4A5A5C<br><span class="cap">на светлом · 6.3:1</span></div>
+        <div class="sw"><i style="background:#EEF0EE"></i><b>light</b> #EEF0EE<br><span class="cap">фон страницы</span></div>
+        <div class="sw"><i style="background:#E2E6E4"></i><b>light-2</b> #E2E6E4<br><span class="cap">чередование, теги</span></div>
+        <div class="sw"><i style="background:#FFFFFF"></i><b>white</b><br><span class="cap">карточки, статьи</span></div>
+      </div>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <div style="display:flex;justify-content:space-between;gap:20px"><div><p class="lbl">kn-media · по умолчанию</p><h2 class="t" style="margin-top:12px;font-size:50px">KINOR.MEDIA</h2><p class="cap" style="font-size:18px">kinor.media · зонтичный дом</p></div><div style="width:130px;flex:none;border-radius:16px;overflow:hidden;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/media-light-mobile-hero.jpg" style="width:100%;display:block"></div></div>
+      <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:600 13px/34px var(--sans)"><div style="flex:25;background:#0B1A22;color:#EDF0EB;padding-left:12px">тёмное 25%</div><div style="flex:75;background:#EEF0EE;padding-left:12px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.1)">светлое 75%</div></div>
+      <p class="p"><b>Характер.</b> Спокойный, строгий, редакционный. Серебро не спорит с проектами — их цвета появляются только в карточках проектов и в футере.</p>
+      <p class="p"><b>Анатомия hero.</b> Светлый фон <code>light</code>. Слева (7/12): eyebrow, H1-девиз, lead, две кнопки, три чипа-лада (первый — тёплый). Справа (5/12): тёмная карточка <code>night</code>, радиус 28, поле струн <code>data-ramp=flat</code>, тёплая струна на 84% ширины, подпись Cormorant внизу слева (не пересекает струну).</p>
+      <p class="p"><b>Девиз.</b> «Медиа открывает дверь. Люди&nbsp;— наша&nbsp;миссия.» — неразрывный пробел перед тире.</p>
+      <p class="p"><b>Кнопки.</b> На светлом: primary — фон <code>accent-ink</code>, текст белый; ghost — рамка <code>hair-light</code>. На тёмном: primary — фон <code>accent</code>, текст <code>night</code>.</p>
+      <p class="p"><b>Главные действия.</b> Читать статьи · Подписаться.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MEDIA MAP -->
+<section class="page" data-s="KINOR.MEDIA · карта главной">
+  <div class="body" style="display:grid;grid-template-columns:560px 150px 1fr;gap:40px">
+    <div style="height:830px;overflow:hidden;border-radius:10px;box-shadow:0 18px 36px rgba(13,27,33,.2)"><img src="../img/media-light-desktop-full.jpg" style="width:100%;display:block"></div>
+    <div style="height:830px;overflow:hidden;border-radius:10px;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/media-light-mobile-full.jpg" style="width:100%;display:block"></div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <p class="lbl">Главная · сверху вниз</p>
+      <table>
+        <tr><th>#</th><th>Секция</th><th>Поверхность</th><th>Источник данных Ghost</th></tr>
+        <tr><td>1</td><td>Шапка: знак, навигация, Войти · Подписаться</td><td>light</td><td>navigation, @member</td></tr>
+        <tr><td>2</td><td>Hero: девиз + тёмная карточка-струны</td><td>light + night</td><td>@custom / статично</td></tr>
+        <tr><td>3</td><td>Проекты KINOR: Радио, Конференция, Медиашкола, Labs</td><td>deep</td><td>страница/настройки темы</td></tr>
+        <tr><td>4</td><td>Статьи: главная статья + 3 карточки</td><td>light</td><td>{{#get "posts" filter="featured"}}</td></tr>
+        <tr><td>5</td><td>Библиотека материалов (доступ: все / участники)</td><td>light-2</td><td>тег #library · visibility</td></tr>
+        <tr><td>6</td><td>Команда и истории</td><td>white</td><td>authors / тег #team</td></tr>
+        <tr><td>7</td><td>О нас: миссия, линия-струна</td><td>light</td><td>страница about</td></tr>
+        <tr><td>8</td><td>Подписка: «Письма KINOR»</td><td>night + поле струн</td><td>Ghost Members / newsletters</td></tr>
+        <tr><td>9</td><td>Футер: семья проектов (4 точки)</td><td>night</td><td>статично</td></tr>
+      </table>
+      <p class="p"><b>Другие шаблоны.</b> Статья (post.hbs): узкая колонка 68ch, крупный заголовок, линия-струна под лидом, блок «Автор». Рубрика (tag.hbs): заголовок + сетка карточек. Материал (библиотека): карточка с типом файла и уровнем доступа.</p>
+      <p class="cap">Тексты, люди и фото на макетах — примеры и плейсхолдеры.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 06 CONF SKIN -->
+<section class="page" data-s="Медиаконференция · «Небо ночное»">
+  <div class="body" style="display:grid;grid-template-columns:1060px 1fr;gap:56px">
+    <div style="display:grid;gap:18px;align-content:start">
+      <div style="border-radius:12px;overflow:hidden;box-shadow:0 20px 40px rgba(13,27,33,.22)"><img src="../img/conf26-sky-desktop-hero.jpg" style="width:100%;display:block"></div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px">
+        <div class="sw"><i style="background:#6CB4FF"></i><b>accent</b> #6CB4FF<br><span class="cap">на night · 8.1:1</span></div>
+        <div class="sw"><i style="background:#1F5FA6"></i><b>accent-ink</b> #1F5FA6<br><span class="cap">на light · 5.6:1</span></div>
+        <div class="sw"><i style="background:#F2EFE8"></i><b>light</b> #F2EFE8<br><span class="cap">тёплая бумага</span></div>
+        <div class="sw"><i style="background:#E7E2D8"></i><b>light-2</b> #E7E2D8<br><span class="cap">чередование</span></div>
+        <div class="sw"><i style="background:#0B1A22"></i><b>page</b> night<br><span class="cap">фон body</span></div>
+      </div>
+    </div>
+    <div style="display:grid;gap:18px;align-content:start">
+      <div style="display:flex;justify-content:space-between;gap:20px"><div><p class="lbl" style="color:#1F5FA6">kn-conf</p><h2 class="t" style="margin-top:12px;font-size:50px">Медиаконференция 2026</h2><p class="cap" style="font-size:18px">conf26.kinor.media → /conf26/</p></div><div style="width:130px;flex:none;border-radius:16px;overflow:hidden;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/conf26-sky-mobile-hero.jpg" style="width:100%;display:block"></div></div>
+      <div style="display:flex;height:34px;border-radius:8px;overflow:hidden;font:600 13px/34px var(--sans)"><div style="flex:55;background:#0B1A22;color:#EDF0EB;padding-left:12px">тёмное 55%</div><div style="flex:45;background:#F2EFE8;padding-left:12px;box-shadow:inset 0 0 0 1px rgba(13,27,33,.1)">светлое 45%</div></div>
+      <p class="p"><b>Характер.</b> Классический тёмный лендинг события: глубокий тёмно-зелёный фон, голубое ночное небо в акцентах, тёплая струна — человек. Контрастнее «Тумана».</p>
+      <p class="p"><b>Анатомия hero.</b> Фон <code>night</code> во всю ширину, поле струн на весь экран (голубые струны, яркость растёт вправо), тёплая струна справа. Слева: eyebrow, H1 «Медиа. Миссия. Движение.», даты и место, lead, CTA «Подтвердить интерес» + «Сохранить даты». Подпись «за экраном — человек» у тёплой струны (<code>data-label</code>).</p>
+      <p class="p"><b>Светлые блоки</b> — только тёплая бумага <code>#F2EFE8</code>: холодные светлые фоны отвергнуты.</p>
+      <p class="p"><b>Главные действия.</b> Подтвердить интерес (форма F0, не регистрация) · Сохранить даты.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 07 CONF MAP -->
+<section class="page" data-s="Медиаконференция · карта лендинга">
+  <div class="body" style="display:grid;grid-template-columns:560px 150px 1fr;gap:40px">
+    <div style="height:830px;overflow:hidden;border-radius:10px;box-shadow:0 18px 36px rgba(13,27,33,.2)"><img src="../img/conf26-sky-desktop-full.jpg" style="width:100%;display:block"></div>
+    <div style="height:830px;overflow:hidden;border-radius:10px;box-shadow:0 12px 24px rgba(13,27,33,.2)"><img src="../img/conf26-sky-mobile-full.jpg" style="width:100%;display:block"></div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <p class="lbl" style="color:#1F5FA6">Лендинг · одна длинная страница</p>
+      <table>
+        <tr><th>#</th><th>Секция (по Landing Copy v0.2)</th><th>Поверхность</th><th>Компонент</th></tr>
+        <tr><td>1</td><td>Hero: «Медиа. Миссия. Движение.», даты, место</td><td>night</td><td>hero-strings</td></tr>
+        <tr><td>2</td><td>За экраном — человек</td><td>light</td><td>statement + линия-струна</td></tr>
+        <tr><td>3</td><td>Ты не один</td><td>night + струны</td><td>statement</td></tr>
+        <tr><td>4</td><td>Для кого: роли</td><td>light</td><td>role-list</td></tr>
+        <tr><td>5</td><td>Формат From Media to Movements</td><td>night</td><td>path с ладами</td></tr>
+        <tr><td>6</td><td>Спикеры и практики — только подтверждённые</td><td>light</td><td>speaker-card 4:5</td></tr>
+        <tr><td>7</td><td>Расписание и место</td><td>white</td><td>days (крупные цифры)</td></tr>
+        <tr><td>8</td><td>FAQ</td><td>night</td><td>faq (details)</td></tr>
+        <tr><td>9</td><td>Интерес F0: email + раздельные согласия</td><td>light</td><td>interest-form</td></tr>
+        <tr><td>10</td><td>Футер семьи</td><td>night</td><td>k-footer</td></tr>
+      </table>
+      <p class="p"><b>Контент.</b> Спикеры, партнёры, цены, программа — только после подтверждения; до этого — подписанные плейсхолдеры. Форма F0 — интерес, не регистрация; данные идут в Supabase / Relationship OS, не в Ghost Members как CRM.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 COMPONENTS -->
+<section class="page" data-s="Компоненты · одинаковы в обоих проектах">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:40px">
+    <div class="demo" style="--a:#C9D4D2;--ai:#4A5A5C;--l:#EEF0EE;--l2:#E2E6E4">
+      <p class="lbl">kn-media</p>
+      <div class="pair">
+        <div class="lt"><span class="b1">Подписаться</span><span class="b2">Наши проекты</span><span class="tg">Статьи</span><span class="fr"><i class="on"></i><i></i><i></i></span></div>
+        <div class="dk"><span class="b1">Подписаться</span><span class="b2">Войти</span><span class="tg">Проекты</span><span class="fr"><i class="on"></i><i></i><i></i></span></div>
+      </div>
+      <canvas class="Fc" data-w="850" data-h="210" data-accent="#C9D4D2" data-warm=".7" style="border-radius:18px;margin-top:18px;background:#0B1A22"></canvas>
+    </div>
+    <div class="demo" style="--a:#6CB4FF;--ai:#1F5FA6;--l:#F2EFE8;--l2:#E7E2D8">
+      <p class="lbl" style="color:#1F5FA6">kn-conf</p>
+      <div class="pair">
+        <div class="lt"><span class="b1">Подтвердить интерес</span><span class="b2">FAQ</span><span class="tg">Для кого</span><span class="fr"><i class="on"></i><i></i><i></i></span></div>
+        <div class="dk"><span class="b1">Подтвердить интерес</span><span class="b2">Сохранить даты</span><span class="tg">19–21 ноября</span><span class="fr"><i class="on"></i><i></i><i></i></span></div>
+      </div>
+      <canvas class="Fc" data-w="850" data-h="210" data-accent="#6CB4FF" data-warm=".7" style="border-radius:18px;margin-top:18px;background:#0B1A22"></canvas>
+    </div>
+    <div style="grid-column:1/-1">
+      <table>
+        <tr><th>Компонент</th><th>Класс / файл</th><th>Правило</th></tr>
+        <tr><td>Кнопки</td><td><code>.btn .btn-primary .btn-ghost .btn-sm</code></td><td>пилюля, min-height 50 (sm 40); primary меняет цвет по поверхности; фокус — рамка lamp 3px</td></tr>
+        <tr><td>Поверхности</td><td><code>.dark .deep .light .light2 .white</code></td><td>цвет текста, кнопок, тегов, ладов переключается автоматически по поверхности</td></tr>
+        <tr><td>Поле струн</td><td><code>canvas.strings</code> · kinor-strings.js</td><td>data-gap 26–34, data-warm (доля ширины), data-op/min, data-amp; data-light на светлом; reduced-motion → статичный кадр; пауза вне экрана</td></tr>
+        <tr><td>Знак</td><td><code>.mk</code> data-size data-n=7/5/3</td><td>7 струн ≥ 32 px, 5 — 24–31 px, 3 — favicon; центральная струна всегда тёплая</td></tr>
+        <tr><td>Лады, линия-струна</td><td><code>.fret .fret.on</code> · <code>svg.ls</code></td><td>тёплый лад — «человек / сейчас»; не больше одного на группу</td></tr>
+        <tr><td>Карточки, теги, FAQ, формы</td><td><code>.card .card-dark .tag .faq .field</code></td><td>радиус 18 (поля 12); FAQ — нативный details/summary; формы — label над полем</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 09 GHOST -->
+<section class="page" data-s="Реализация в Ghost">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr;gap:56px">
+    <div style="display:grid;gap:18px;align-content:start">
+      <p class="lbl">Одна тема kinor-media — два проекта</p>
+      <h2 class="t" style="font-size:52px">Проект = класс на body. Цвет = токены.</h2>
+      <p class="p">Разметка и компоненты ссылаются только на переменные (<code>--accent</code>, <code>--light</code>…), никогда на названия палитр. Смена палитры — правка одного файла <code>tokens.css</code>.</p>
+      <pre>kinor-media/                 <span>Ghost theme</span>
+├─ default.hbs               <span>body class ← block "project"</span>
+├─ index.hbs · post.hbs · page.hbs · tag.hbs · author.hbs
+├─ custom-conf26.hbs         <span>лендинг, {{!&lt; default}} + kn-conf</span>
+├─ partials/  header · footer · hero-strings · card-post
+│             card-project · faq · interest-form · k-mark
+├─ assets/css/tokens.css     <span>← kinor-web-tokens.css</span>
+├─ assets/css/theme.css      <span>поверхности, компоненты</span>
+├─ assets/js/strings.js      <span>← kinor-strings.js</span>
+├─ assets/fonts/             <span>Onest, Cormorant (woff2)</span>
+└─ routes.yaml · package.json (config.custom)</pre>
+    </div>
+    <div style="display:grid;gap:16px;align-content:start">
+<pre><span># routes.yaml</span>
+routes:
+  /conf26/:
+    template: custom-conf26
+    data: page.conf26
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:-hash-conf26</pre>
+<pre><span>{{!-- default.hbs --}}</span>
+&lt;body class="{{body_class}} {{{block "project"}}}"&gt;
+
+<span>{{!-- custom-conf26.hbs --}}</span>
+{{!&lt; default}}
+{{#contentFor "project"}}kn-conf{{/contentFor}}</pre>
+      <p class="p"><b>Домен.</b> conf26.kinor.media — 301 или прокси на kinor.media/conf26/ (ADR-008). Без класса body = KINOR.MEDIA.</p>
+      <p class="p"><b>Данные.</b> Ghost Members — рассылки и доступ к материалам. Люди, согласия, отклики и форма F0 — Supabase / Relationship OS. React/Vite — только для прикладных частей.</p>
+      <p class="cap">Синтаксис helpers проверить на целевой версии Ghost; архитектор вправе выбрать другой способ, если сохраняется принцип «класс проекта → токены».</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 RULES -->
+<section class="page" data-s="Правила и приёмка">
+  <div class="body" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:44px">
+    <div style="display:grid;gap:14px;align-content:start">
+      <p class="lbl">Что стабильно · что меняется</p>
+      <p class="p"><b>Стабильно:</b> разметка, сетка, компоненты, знак и тёплая струна, шрифты, поведение поля струн, имена классов проектов (<code>kn-media</code>, <code>kn-conf</code>, <code>kn-school</code>, <code>kn-labs</code>).</p>
+      <p class="p"><b>Может измениться:</b> значения <code>--accent</code>, <code>--accent-ink</code>, <code>--light</code>, <code>--light-2</code>, фон страницы проекта. Проверка контраста — при каждой смене.</p>
+      <p class="p"><b>Не делать:</b> тёплый цвет в кнопках и ссылках; холодные светлые фоны для конференции; несколько тёплых струн на экране; цвета проектов вне карточек проектов и футера.</p>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <p class="lbl">Качество</p>
+      <ul class="ul">
+        <li>WCAG 2.2 AA: текст ≥ 4.5:1, крупный ≥ 3:1; фокус видим</li>
+        <li>Адаптив: 390 · 768 · 1024 · 1440; поля ≥ 16 px; без горизонтального скролла</li>
+        <li><code>prefers-reduced-motion</code> → статичные струны</li>
+        <li>Canvas: DPR ≤ 2, пауза вне экрана и во фоновой вкладке</li>
+        <li>LCP &lt; 2.5 s на 4G; шрифты self-host, <code>font-display: swap</code></li>
+        <li>Картинки: responsive srcset от Ghost, lazy ниже первого экрана</li>
+        <li>OG-картинки 1200×630 для каждого шаблона</li>
+        <li>До утверждения — <code>noindex</code> и закрытый доступ</li>
+      </ul>
+    </div>
+    <div style="display:grid;gap:14px;align-content:start">
+      <p class="lbl">Файлы-основания</p>
+      <ul class="ul">
+        <li><b>kinor-web-tokens.css</b> — токены рабочего решения</li>
+        <li><b>kinor-skins.css</b> — поверхности и компоненты (эталон)</li>
+        <li><b>kinor-strings.js</b> — знак, линия-струна, поле струн</li>
+        <li><b>media-light/</b>, <b>conf26-sky/</b> — эталонные HTML-страницы</li>
+        <li>Брендбук «Струна» v1.0 — логотипы SVG, носители</li>
+        <li>ADR-008 — Ghost 6, одна тема, маршрут /conf26/</li>
+        <li>Landing Page Copy v0.2 — тексты лендинга</li>
+      </ul>
+      <p class="cap" style="font-size:16px">Всё: dimmyz.github.io/kmc26-design-a/sites/standard/ · Google Drive → 03_WEBSITE → «KINOR — Дизайн-стандарт сайтов v0.1».</p>
+    </div>
+  </div>
+</section>
+</body></html>

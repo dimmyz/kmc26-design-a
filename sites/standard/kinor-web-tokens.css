@@ -1,0 +1,53 @@
+/* ==========================================================================
+   KINOR web tokens — WORKING DECISION v0.1 (17.09.2026) · draft, may change
+   One Ghost theme "kinor-media". Project class on <body> → palette.
+   Markup and components never reference palette names (silver/sky),
+   only these variables — a future palette change edits this file only.
+
+   body (no class) / .kn-media  → KINOR.MEDIA       · «Серебро», light hero
+   body.kn-conf                 → Медиаконференция  · «Небо ночное», dark hero
+   (later) body.kn-school       → Медиашкола        · «Олива»
+   (later) body.kn-labs         → Kinor Labs         · «Фиалка»
+   Radio Kinor (kinor.live) is a separate Ghost install and keeps «Бирюза».
+   ========================================================================== */
+:root{
+  /* foundation — identical for every project */
+  --night:#0B1A22;           /* main dark */
+  --deep:#163847;            /* dark sections, projector */
+  --surface:#10262F;         /* cards / fields on dark */
+  --lamp:#F2B35B;            /* THE warm string = a person. Never a UI accent. */
+  --lamp-ink:#D9892A;        /* warm string STROKES on light (2.4:1 — not for text) */
+  --lamp-text:#9A5A14;       /* warm TEXT on light (4.8:1 on #EEF0EE) */
+  --ink:#0D1B21; --ink-2:#44555B; --white:#FFFFFF;
+  --on-dark:#EDF0EB; --on-dark-2:rgba(237,240,235,.72);
+  --hair-dark:rgba(237,240,235,.13); --hair-light:rgba(13,27,33,.13);
+
+  --f-sans:"Onest", Arial, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-serif:"Cormorant Garamond", Georgia, "Times New Roman", serif;   /* italic, human phrases only */
+  --f-hebrew:"Rubik", Arial, sans-serif;
+
+  --max:1240px; --gutter:clamp(16px,4vw,56px); --sec-y:clamp(72px,9vw,128px);
+  --r-pill:999px; --r-card:18px; --r-field:12px; --r-hero-card:28px;
+
+  /* project palette — default = KINOR.MEDIA «Серебро» */
+  --accent:#C9D4D2;          /* on dark: 11.7:1 on night */
+  --accent-ink:#4A5A5C;      /* on light: 6.3:1 on light, 7.2:1 white text on it */
+  --light:#EEF0EE;           /* page ground */
+  --light-2:#E2E6E4;         /* alternate light section, tags */
+  --page-bg:var(--light); --page-fg:var(--ink);
+}
+.kn-media{}  /* explicit alias of the default */
+
+.kn-conf{   /* Медиаконференция · «Небо ночное» */
+  --accent:#6CB4FF;          /* 8.1:1 on night, 5.7:1 on deep */
+  --accent-ink:#1F5FA6;      /* 5.6:1 on light, white text on it 6.5:1 */
+  --light:#F2EFE8;           /* WARM paper — cold light grounds were rejected */
+  --light-2:#E7E2D8;
+  --page-bg:var(--night); --page-fg:var(--on-dark);
+}
+
+/* reserved for later — keep names stable */
+.kn-school{ --accent:#B5C98A; --accent-ink:#55692F; --light:#F1F2EA; --light-2:#E4E8D6; --r-card:24px; }
+.kn-labs  { --accent:#A7A3FF; --accent-ink:#5147C7; --light:#F4F2EE; --light-2:#E9E6F3; --r-card:24px; }
+
+body{background:var(--page-bg);color:var(--page-fg);font:400 17px/1.6 var(--f-sans)}

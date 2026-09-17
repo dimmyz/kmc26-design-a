@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KINOR.MEDIA — медиа, за которыми люди · дизайн-концепт «Серебро»</title>
+<title>KINOR.MEDIA — медиа, за которыми люди · дизайн-концепт «Серебро», светлый</title>
 <meta name="description" content="KINOR.MEDIA — сообщество медиакоманд, авторов, лидеров и технических специалистов: статьи, материалы, проекты и люди.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0B1A22">
+<meta name="theme-color" content="#EEF0EE">
 <meta property="og:type" content="website">
-<meta property="og:title" content="KINOR.MEDIA — дизайн-концепт «Серебро»">
+<meta property="og:title" content="KINOR.MEDIA — дизайн-концепт «Серебро», светлый hero">
 <meta property="og:description" content="Зонтичный сайт KINOR: статьи, материалы, проекты, команда. Концепт для обсуждения.">
-<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/sites/img/og-media.jpg">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/sites/img/og-media-light.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../../brandbook/logo/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,8 +19,12 @@
 <style>
 /* page-level layout for the parent site */
 .hero{padding-block:clamp(56px,8vw,110px) clamp(64px,8vw,110px)}
-.hero .split{align-items:end}
-.hero .h1{font-size:clamp(40px,5.8vw,84px)}
+.hero .split{align-items:center;grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.hero-art{position:relative;min-height:460px;border-radius:28px;background:var(--night);overflow:hidden;box-shadow:0 30px 60px -30px rgba(13,27,33,.45)}
+.hero-art .badge{position:absolute;left:28px;bottom:28px;max-width:62%;display:grid;gap:10px;color:var(--on-dark)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--white);font-size:14px;border:1px solid var(--hair-light)}
+.hero .h1{font-size:clamp(40px,4.7vw,68px)}
 .hero-note{display:grid;gap:10px;justify-items:start;max-width:320px;margin-left:auto}
 .projects{margin-top:-1px}
 .proj{position:relative;min-height:230px;padding:26px;display:grid;align-content:space-between;gap:18px;text-decoration:none}
@@ -42,9 +46,9 @@
 </style>
 </head>
 <body class="skin-media">
-<div class="draft">Дизайн-концепт KINOR.MEDIA · тема «Серебро» · тексты и люди — примеры</div>
+<div class="draft">Дизайн-концепт KINOR.MEDIA · тема «Серебро» · светлый hero · тексты и люди — примеры</div>
 
-<div class="dark">
+<div class="light">
 <header class="k-header">
   <div class="wrap">
     <a class="k-logo" href="#"><span class="mk" data-size="40"></span><span><b>KINOR</b><small>Media · медиасообщество</small></span></a>
@@ -53,18 +57,18 @@
   </div>
 </header>
 
-<section class="hero rel" style="padding-top:clamp(40px,6vw,80px)">
-  <canvas class="strings" data-gap="34" data-warm=".6" data-op=".42" data-min=".03" data-amp="5"></canvas>
+<section class="hero">
   <div class="wrap split">
     <div class="stack" style="gap:26px">
-      <p class="eyebrow">KINOR.MEDIA</p>
-      <h1 class="h1">Медиа открывает дверь. Люди&nbsp;— наша миссия.</h1>
+      <p class="eyebrow">KINOR.MEDIA · медиасообщество</p>
+      <h1 class="h1">Медиа открывает дверь. Люди&nbsp;— наша&nbsp;миссия.</h1>
       <p class="lead">Сообщество медиакоманд, авторов, лидеров и технических специалистов. Делимся опытом, учимся и делаем проекты вместе — чтобы за охватом не терять человека.</p>
       <div class="row"><a class="btn btn-primary" href="#articles">Читать статьи</a><a class="btn btn-ghost" href="#projects">Наши проекты</a></div>
+      <div class="chips"><span class="chip"><span class="fret on"></span>Статьи и разборы</span><span class="chip"><span class="fret"></span>Библиотека материалов</span><span class="chip"><span class="fret"></span>Проекты и команда</span></div>
     </div>
-    <div class="hero-note" id="heroLabel" style="position:relative">
-      <p class="serif warm" style="font-size:34px;line-height:1.05">за экраном —<br>человек</p>
-      <p class="small muted">Одна тёплая струна среди многих — наш знак и наш способ смотреть на медиа.</p>
+    <div class="hero-art">
+      <canvas class="strings" data-gap="26" data-warm=".84" data-op=".7" data-min=".18" data-amp="8" data-ramp="flat" data-warm-mobile=".6"></canvas>
+      <div class="badge"><p class="serif" style="font-size:36px;line-height:1.05;color:var(--lamp)">за экраном —<br>человек</p><p class="small" style="color:var(--on-dark-2)">Одна тёплая струна среди многих — наш знак и наш способ смотреть на медиа.</p></div>
     </div>
   </div>
 </section>
@@ -155,7 +159,7 @@
   <div class="wrap join">
     <div class="stack" style="gap:16px"><p class="eyebrow">Ты не один</p><h2 class="h2">Письма KINOR</h2><p class="lead">Раз в две недели: новые статьи, материалы и новости проектов. Отписаться — в один клик.</p></div>
     <form class="sub-form" data-demo novalidate>
-      <label class="field" for="m-email">Email<input id="m-email" type="email" required placeholder="name@example.com"></label>
+      <label class="field" for="ml-email">Email<input id="ml-email" type="email" required placeholder="name@example.com"></label>
       <button class="btn btn-primary" type="submit" style="align-self:end">Подписаться</button>
       <p class="note" style="flex-basis:100%">Подписка на новости — отдельно от регистрации на мероприятия.</p>
     </form>

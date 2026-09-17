@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kinor Relationship OS — от отклика к отношениям · концепт «Олива»</title>
+<meta name="description" content="Kinor Relationship OS — лёгкая система отношений для небольших медиакоманд, авторов и волонтёров: от отклика к разговору, личному контакту и бережной передаче в общину.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F1F2EA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kinor Relationship OS — дизайн-концепт «Олива»">
+<meta property="og:description" content="Охват привлекает внимание. Отклик открывает человека. Отношения ведут дальше. Концепт продуктового сайта Kinor Labs.">
+<meta property="og:image" content="https://dimmyz.github.io/kmc26-design-a/sites/img/og-ros-olive.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../brandbook/logo/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=JetBrains+Mono:wght@500&family=Onest:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../assets/kinor-skins.css">
+<style>
+/* Relationship OS — product layout. body.ros-light / body.ros-dark set the app-surface tokens. */
+.ros-light{--app:#FFFFFF;--app-2:var(--light);--app-fg:var(--ink);--app-mute:var(--ink-2);--app-line:var(--hair-light);--hi:var(--accent-ink);--warm-c:var(--lamp-ink);--glow:rgba(13,27,33,.16)}
+.ros-dark{--app:var(--surface);--app-2:var(--deep);--app-fg:var(--on-dark);--app-mute:var(--on-dark-2);--app-line:var(--hair-dark);--hi:var(--accent);--warm-c:var(--lamp);--glow:rgba(0,0,0,.5)}
+.mono{font-family:"JetBrains Mono",ui-monospace,Consolas,monospace;font-weight:500;letter-spacing:0}
+.k-logo b{letter-spacing:.14em}
+.k-logo .os{font:500 12px/1 "JetBrains Mono",monospace;padding:4px 7px;border-radius:6px;border:1px solid currentColor;opacity:.7;margin-left:2px;letter-spacing:0;align-self:flex-start;margin-top:2px}
+.grid-bg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--app-line) 1px,transparent 1px),linear-gradient(90deg,var(--app-line) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(90% 70% at 70% 40%,#000 20%,transparent 75%);mask-image:radial-gradient(90% 70% at 70% 40%,#000 20%,transparent 75%);opacity:.55}
+.hero{padding-block:clamp(40px,6vw,72px) clamp(64px,8vw,112px)}
+.hero .split{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:center}
+.hero .h1{font-size:clamp(40px,5.4vw,78px)}
+.formula{display:grid;gap:6px;font-size:14px;color:var(--app-mute)}
+.formula b{color:var(--app-fg);font-weight:500}
+.formula .w{color:var(--warm-c)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;font:500 12px/1 "JetBrains Mono",monospace;border:1px solid var(--app-line);color:var(--app-mute);white-space:nowrap}
+.pill .dot{width:7px;height:7px}
+.pill.hi{color:var(--hi);border-color:color-mix(in srgb,var(--hi) 45%,transparent)}
+.pill.warm{color:var(--warm-c);border-color:color-mix(in srgb,var(--warm-c) 50%,transparent)}
+
+/* app window mock */
+.app{position:relative;border-radius:20px;background:var(--app);color:var(--app-fg);border:1px solid var(--app-line);box-shadow:0 40px 80px -40px var(--glow);overflow:hidden;font-size:14px}
+.app-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--app-line);background:var(--app-2)}
+.app-bar i{width:10px;height:10px;border-radius:50%;background:var(--app-line);display:inline-block}
+.app-bar .url{flex:1;text-align:center;font-size:12px;color:var(--app-mute)}
+.app-body{display:grid;grid-template-columns:56px minmax(0,1fr)}
+.app-side{border-right:1px solid var(--app-line);display:grid;align-content:start;justify-items:center;gap:14px;padding:16px 0}
+.app-side span{width:28px;height:28px;border-radius:9px;border:1.5px solid var(--app-line)}
+.app-side span.on{border-color:var(--hi);background:color-mix(in srgb,var(--hi) 14%,transparent)}
+.app-main{padding:20px;display:grid;gap:16px}
+.person{display:flex;gap:14px;align-items:center}
+.ava{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:600;background:color-mix(in srgb,var(--hi) 16%,transparent);color:var(--hi);flex:none}
+.person h3{font-size:18px}
+.stages{display:grid;grid-template-columns:repeat(7,1fr);position:relative;padding-top:4px}
+.stages::before{content:"";position:absolute;left:7px;right:7px;top:11px;height:2px;background:var(--app-line)}
+.stages .prog{position:absolute;left:7px;top:11px;height:2px;background:var(--hi);transition:width .6s}
+.stg{position:relative;display:grid;gap:8px;justify-items:start;font-size:10.5px;color:var(--app-mute)}
+.stg .fret{background:var(--app);border-color:var(--app-line)}
+.stg.done .fret{border-color:var(--hi)}
+.stg.now .fret{border:0;background:var(--warm-c);box-shadow:0 0 0 5px color-mix(in srgb,var(--warm-c) 22%,transparent)}
+.stg.now{color:var(--app-fg);font-weight:600}
+.cols{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px}
+.tl{display:grid;gap:0}
+.tl li{list-style:none;display:grid;grid-template-columns:14px 1fr;gap:10px;padding-bottom:12px;position:relative}
+.tl li::before{content:"";position:absolute;left:6px;top:14px;bottom:0;width:1.5px;background:var(--app-line)}
+.tl li:last-child::before{display:none}
+.tl b{display:block;font-weight:500;line-height:1.35}
+.tl small{color:var(--app-mute);font-size:11.5px}
+.tl .d{width:10px;height:10px;border-radius:50%;border:2px solid var(--hi);margin-top:4px;background:var(--app)}
+.tl .d.w{border-color:var(--warm-c);background:var(--warm-c)}
+.box{border:1px solid var(--app-line);border-radius:14px;padding:14px;display:grid;gap:10px;align-content:start}
+.box .lbl{font:500 11px/1 "JetBrains Mono",monospace;color:var(--app-mute);text-transform:uppercase;letter-spacing:.06em}
+.ai{border-style:dashed}
+.mini-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 12px;border-radius:10px;font:600 13px/1 var(--f-sans);border:1px solid var(--app-line);color:var(--app-fg);background:transparent}
+.mini-btn.pri{background:var(--hi);border-color:var(--hi);color:var(--app)}
+.float{position:absolute;right:-8px;bottom:26px;transform:translateX(0);padding:12px 14px;border-radius:14px;background:var(--app);border:1px solid var(--app-line);box-shadow:0 20px 40px -20px var(--glow);display:flex;gap:10px;align-items:center;font-size:13px}
+
+/* sections */
+.sec-head .h2{font-size:clamp(30px,4vw,52px)}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--app-line)}
+.trio>div{padding:28px 28px 8px 0;display:grid;gap:10px;align-content:start}
+.trio>div+div{padding-left:28px;border-left:1px solid var(--app-line)}
+.trio .big{font:600 clamp(26px,2.6vw,36px)/1.1 var(--f-sans);letter-spacing:-.015em}
+.trio .big.w{color:var(--warm-c)}
+.path{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:12px;position:relative}
+.path::before{content:"";position:absolute;left:7px;right:7px;top:7px;height:2px;background:linear-gradient(90deg,var(--hi) 0 70%,var(--warm-c) 70% 100%);opacity:.7}
+.step{display:grid;gap:8px;padding-top:32px;position:relative;align-content:start}
+.step .fret{position:absolute;top:0;left:0;background:var(--app)}
+.step .fret{border-color:var(--hi)}
+.step.w .fret{border:0;background:var(--warm-c)}
+.step code{font:500 10.5px/1 "JetBrains Mono",monospace;color:var(--app-mute)}
+.step b{font-size:17px;line-height:1.2}
+.step p{font-size:13.5px;color:var(--app-mute);line-height:1.45}
+.feat{padding:26px;display:grid;gap:12px;align-content:start;border:1px solid var(--app-line)}
+.feat .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;border:1.5px solid color-mix(in srgb,var(--hi) 45%,transparent);color:var(--hi)}
+.feat .ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feat p{color:var(--app-mute);font-size:15px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;padding:16px}
+.lane{display:grid;gap:10px;align-content:start;padding:10px;border-radius:14px;background:var(--app-2)}
+.lane h4{margin:0;display:flex;justify-content:space-between;font:600 12.5px/1.2 var(--f-sans)}
+.lane h4 span{font:500 11px/1 "JetBrains Mono",monospace;color:var(--app-mute)}
+.tk{padding:10px;border-radius:10px;background:var(--app);border:1px solid var(--app-line);display:grid;gap:6px;font-size:12.5px}
+.tk .who{display:flex;align-items:center;gap:8px;font-weight:600}
+.tk .who i{width:22px;height:22px;border-radius:50%;background:color-mix(in srgb,var(--hi) 18%,transparent);color:var(--hi);font:600 10px/22px var(--f-sans);text-align:center;font-style:normal}
+.tk small{color:var(--app-mute)}
+.tk.w{border-color:color-mix(in srgb,var(--warm-c) 55%,transparent)}
+.handoff{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(32px,5vw,80px);align-items:center}
+.hand-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.node{padding:20px;border-radius:18px;border:1px solid var(--hair-dark);background:rgba(237,240,235,.04);display:grid;gap:8px}
+.node small{color:var(--on-dark-2)}
+.bridge{width:120px;height:80px}
+.checks{display:grid;gap:12px;margin-top:22px}
+.checks li{list-style:none;display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start}
+.checks svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:2}
+.no{display:grid;gap:10px}
+.no li{list-style:none;display:flex;gap:10px;align-items:baseline}
+.no li::before{content:"—";color:var(--warm-c)}
+.persona{padding:22px;display:grid;gap:10px;align-content:start;border:1px solid var(--app-line)}
+.persona .n{font:500 11px/1 "JetBrains Mono",monospace;color:var(--hi)}
+.persona p{font-size:14px;color:var(--app-mute)}
+.tier{padding:28px;display:grid;gap:14px;align-content:start;border:1px solid var(--app-line)}
+.tier.main{border:2px solid var(--hi)}
+.tier ul{margin:0;padding:0;display:grid;gap:9px}
+.tier li{list-style:none;display:flex;gap:10px;font-size:15px}
+.tier li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--hi);margin-top:9px;flex:none}
+.tier .price{font:500 13px/1 "JetBrains Mono",monospace;color:var(--app-mute)}
+.dog{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.form .full{grid-column:1/-1}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.chk input{margin-top:3px;accent-color:var(--hi)}
+.surf{background:var(--surface);color:var(--on-dark)}
+.ros-dark .eyebrow{color:var(--accent)}
+.ros-dark .lead{color:var(--on-dark-2)}
+.ros-dark .btn-ghost{border-color:var(--hair-dark)}
+.ros-dark .fret{border-color:var(--accent)}
+.ros-dark .card{background:var(--surface);color:var(--on-dark)}
+.ros-dark .field input,.ros-dark .field select{background:var(--surface);border-color:var(--hair-dark);color:var(--on-dark)}
+.ros-dark .faq details{border-color:var(--hair-dark)}
+.ros-dark .faq summary::after{color:var(--accent)}
+.ros-dark .tag{background:rgba(237,240,235,.08);color:var(--accent)}
+.ros-dark .muted{color:var(--on-dark-2)}
+@media (max-width:1100px){.path{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:28px}.path::before{display:none}.board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:960px){.hero .split,.handoff,.cols{grid-template-columns:1fr}.trio{grid-template-columns:1fr}.trio>div+div{padding-left:0;border-left:0;border-top:1px solid var(--app-line)}.float{display:none}.k-actions .mode{display:none}}
+@media (max-width:620px){.path{grid-template-columns:repeat(2,minmax(0,1fr))}.board{grid-template-columns:1fr 1fr}.board .lane:nth-child(n+3){display:none}.form{grid-template-columns:1fr}.stg span:last-child{display:none}.app-body{grid-template-columns:1fr}.app-side{display:none}.hand-flow{grid-template-columns:1fr}.bridge{transform:rotate(90deg);justify-self:center;height:60px}.dog{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="skin-school ros-light">
+<div class="draft">Дизайн-концепт Kinor Relationship OS · «Олива» · продукт в разработке, люди и данные — примеры</div>
+
+<div class="light">
+<header class="k-header">
+  <div class="wrap">
+    <a class="k-logo" href="#"><span class="mk" data-size="40"></span><span><b>KINOR</b><small>Kinor Labs · Relationship OS</small></span><span class="os">rel·os</span></a>
+    <nav class="k-nav" aria-label="Разделы"><a href="#how">Как работает</a><a href="#path">Путь</a><a href="#handoff">Передача</a><a href="#privacy">Приватность</a><a href="#plans">Тарифы</a></nav>
+    <div class="k-actions"><a class="btn btn-ghost btn-sm mode" href="../ros-graphite/">Тёмная версия</a><a class="btn btn-primary btn-sm" href="#access">Ранний доступ</a></div>
+  </div>
+</header>
+
+<section class="hero rel">
+  <div class="grid-bg"></div>
+  <div class="wrap split">
+    <div class="stack" style="gap:26px">
+      <p class="row" style="gap:10px"><span class="pill hi"><span class="dot" style="background:currentColor"></span>Kinor Labs · ранний доступ</span><span class="pill">v0.1 · пилот</span></p>
+      <h1 class="h1">От отклика&nbsp;— к&nbsp;отношениям</h1>
+      <p class="lead">Лёгкая система отношений для небольших медиакоманд, авторов, волонтёров и служителей. Чтобы человек, который откликнулся, не потерялся: разговор, личный контакт и бережная передача команде, которая поможет ему найти общину.</p>
+      <div class="row"><a class="btn btn-primary" href="#access">Попробовать в пилоте</a><a class="btn btn-ghost" href="#how">Как это работает</a></div>
+      <div class="formula mono"><span><b>Охват</b> → внимание</span><span><b>Отклик</b> → человек</span><span class="w"><b class="w">Отношения</b> → путь дальше</span></div>
+    </div>
+
+    <div class="app" aria-label="Пример экрана: карточка человека">
+      <div class="app-bar"><i></i><i></i><i></i><span class="url mono">rel.kinor.media / люди / анна-к</span><span class="pill">пример</span></div>
+      <div class="app-body">
+        <div class="app-side"><span class="mk" data-size="26" data-n="3" style="border:0;width:auto;height:auto"></span><span class="on"></span><span></span><span></span><span></span></div>
+        <div class="app-main">
+          <div class="row" style="justify-content:space-between">
+            <div class="person"><div class="ava">АК</div><div><h3>Анна К.</h3><small class="mono" style="color:var(--app-mute)">источник: комментарий · YouTube</small></div></div>
+            <span class="pill warm"><span class="dot" style="background:currentColor"></span><span id="stageName">Диалог</span></span>
+          </div>
+          <div class="stages" id="stages">
+            <span class="prog" id="prog"></span>
+            <div class="stg"><span class="fret"></span><span>Замечен</span></div>
+            <div class="stg"><span class="fret"></span><span>Вовлечён</span></div>
+            <div class="stg"><span class="fret"></span><span>Отклик</span></div>
+            <div class="stg"><span class="fret"></span><span>Диалог</span></div>
+            <div class="stg"><span class="fret"></span><span>Отношения</span></div>
+            <div class="stg"><span class="fret"></span><span>Шаг</span></div>
+            <div class="stg"><span class="fret"></span><span>Передача</span></div>
+          </div>
+          <div class="cols">
+            <ul class="tl" style="margin:0;padding:0">
+              <li><span class="d"></span><div><b>Комментарий под видео «Кто ваш один человек?»</b><small class="mono">12 сен · YouTube</small></div></li>
+              <li><span class="d"></span><div><b>Ответ команды — Мария</b><small class="mono">12 сен · за 2 часа</small></div></li>
+              <li><span class="d"></span><div><b>Личное сообщение, просит поговорить</b><small class="mono">14 сен · Telegram</small></div></li>
+              <li><span class="d w"></span><div><b>Созвон назначен</b><small class="mono">18 сен · следующий шаг</small></div></li>
+            </ul>
+            <div style="display:grid;gap:12px;align-content:start">
+              <div class="box"><span class="lbl">Согласие</span><span class="pill hi">✓ на личный контакт</span><span class="pill">○ на передачу — спросить</span></div>
+              <div class="box ai"><span class="lbl">AI-помощник</span><span style="font-size:13px;line-height:1.4">Черновик ответа и краткое резюме разговора готовы.</span><small style="color:var(--app-mute);font-size:11.5px">Предлагает — решает человек</small><span class="mini-btn">Открыть черновик</span></div>
+            </div>
+          </div>
+          <div class="row" style="justify-content:space-between;border-top:1px solid var(--app-line);padding-top:14px">
+            <small class="mono" style="color:var(--app-mute)">ответственный: Мария · команда отклика</small>
+            <span class="mini-btn pri">Передать команде →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<main>
+<section class="white" id="how" style="padding-block:clamp(56px,7vw,96px)">
+  <div class="wrap">
+    <div class="trio">
+      <div><code class="mono muted small">01 · reach</code><p class="big">Охват привлекает внимание</p><p class="muted">Видео, посты и эфиры открывают дверь. Но просмотры — ещё не люди.</p></div>
+      <div><code class="mono muted small">02 · response</code><p class="big">Отклик открывает человека</p><p class="muted">Комментарий, сообщение, заявка. Здесь начинается ответственность команды.</p></div>
+      <div><code class="mono muted small">03 · relationship</code><p class="big w">Отношения ведут дальше</p><p class="muted">Разговор, доверие, личный контакт — и следующий шаг, который выбирает сам человек.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="path">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Путь человека</p><h2 class="h2">Каждый этап виден. Никто не&nbsp;теряется между каналами.</h2><p class="lead">Система помнит, где человек сейчас, кто за него отвечает и что должно произойти дальше.</p></div>
+    <div class="path">
+      <div class="step"><span class="fret"></span><code>DISCOVERED</code><b>Замечен</b><p>Человек впервые проявился в канале</p></div>
+      <div class="step"><span class="fret"></span><code>ENGAGED</code><b>Вовлечён</b><p>Смотрит, реагирует, возвращается</p></div>
+      <div class="step"><span class="fret"></span><code>RESPONDED</code><b>Откликнулся</b><p>Написал, спросил, оставил заявку</p></div>
+      <div class="step"><span class="fret"></span><code>DIALOGUE</code><b>Диалог</b><p>Команда отвечает лично и вовремя</p></div>
+      <div class="step"><span class="fret"></span><code>RELATIONSHIP</code><b>Отношения</b><p>Доверие, регулярный контакт</p></div>
+      <div class="step"><span class="fret"></span><code>NEXT_STEP</code><b>Следующий шаг</b><p>Встреча, группа, помощь — по желанию</p></div>
+      <div class="step w"><span class="fret"></span><code>HANDOFF</code><b>Передача</b><p>С согласием — команде рядом с человеком</p></div>
+      <div class="step w"><span class="fret"></span><code>CONNECTED</code><b>На связи</b><p>Человек в общине, автор знает, что всё хорошо</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="white">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Возможности</p><h2 class="h2">Просто для одного. Достаточно для&nbsp;команды.</h2></div>
+    <div class="grid3">
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span><h3 class="h3">Единый контекст человека</h3><p>История разговоров, источник, согласия и заметки — в одной карточке, а не в пяти мессенджерах.</p></div>
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z"/></svg></span><h3 class="h3">Входящие из каналов</h3><p>Комментарии, личные сообщения и формы собираются в общий поток. Интеграции подключаются модулями.</p></div>
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg></span><h3 class="h3">Задачи и напоминания</h3><p>«Ответить сегодня», «позвонить в четверг». Ни один отклик не остаётся без ответа.</p></div>
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 12h12M12 6l6 6-6 6"/><path d="M20 4v16"/></svg></span><h3 class="h3">Передача с согласием</h3><p>Человек сам решает, с кем связаться дальше. Принимающая команда видит только разрешённое.</p></div>
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg></span><h3 class="h3">AI-помощник</h3><p>Черновики ответов, резюме разговоров, подсказки о следующем шаге. Предлагает, но не решает.</p></div>
+      <div class="card feat"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="9" r="3"/><path d="M2 20c1-3 3-5 6-5s5 2 6 5M14 15c3 0 5 2 6 5"/></svg></span><h3 class="h3">Команды и роли</h3><p>Автор, модератор, команда отклика, наставник. Каждый видит свою часть работы.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Рабочий стол команды</p><h2 class="h2">Утром видно, кому нужен ответ</h2></div>
+    <div class="app" aria-label="Пример экрана: доска этапов">
+      <div class="app-bar"><i></i><i></i><i></i><span class="url mono">rel.kinor.media / доска · команда отклика</span><span class="pill">пример</span></div>
+      <div class="board">
+        <div class="lane"><h4>Новые отклики <span>3</span></h4>
+          <div class="tk"><span class="who"><i>ИС</i>Илья С.</span><small>«Как с вами поговорить?» · Telegram</small><span class="pill hi">ответить сегодня</span></div>
+          <div class="tk"><span class="who"><i>ОВ</i>Ольга В.</span><small>Форма на сайте · вопрос</small></div>
+          <div class="tk"><span class="who"><i>Д</i>Давид</span><small>Комментарий · эфир</small></div>
+        </div>
+        <div class="lane"><h4>Диалог <span>2</span></h4>
+          <div class="tk w"><span class="who"><i>АК</i>Анна К.</span><small>Созвон 18 сен · Мария</small></div>
+          <div class="tk"><span class="who"><i>РМ</i>Рома М.</span><small>Переписка · 3 дня</small></div>
+        </div>
+        <div class="lane"><h4>Отношения <span>2</span></h4>
+          <div class="tk"><span class="who"><i>ЕЛ</i>Елена Л.</span><small>Встречались дважды</small></div>
+          <div class="tk"><span class="who"><i>ТН</i>Тимур Н.</span><small>Регулярный контакт</small></div>
+        </div>
+        <div class="lane"><h4>Следующий шаг <span>1</span></h4>
+          <div class="tk"><span class="who"><i>ВП</i>Вера П.</span><small>Хочет в группу рядом с домом</small><span class="pill warm">спросить согласие</span></div>
+        </div>
+        <div class="lane"><h4>Передача <span>1</span></h4>
+          <div class="tk w"><span class="who"><i>СГ</i>Сергей Г.</span><small>Принято: команда в Хайфе</small><span class="pill hi">✓ на связи</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note" style="margin-top:14px">Имена и события — вымышленные примеры для макета.</p>
+  </div>
+</section>
+
+<section class="deep rel" id="handoff">
+  <canvas class="strings" data-gap="34" data-warm=".52" data-op=".35" data-min=".03" data-amp="6" data-warm-mobile=".5"></canvas>
+  <div class="wrap handoff">
+    <div class="stack">
+      <p class="eyebrow">Передача · handoff</p>
+      <h2 class="h2">Медиа открывает дверь. Люди&nbsp;— наша миссия.</h2>
+      <p class="lead">Небольшая команда не может сопровождать каждого сама. Relationship OS помогает бережно передать человека тем, кто рядом с ним, — и не потерять связь.</p>
+      <ul class="checks" style="padding:0;margin-top:14px">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg><span>Человек даёт согласие на передачу и выбирает, что можно рассказать.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg><span>Принимающая команда получает только разрешённый контекст.</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4L19 6"/></svg><span>Автор видит итог: «связались», «встретились», «на связи».</span></li>
+      </ul>
+    </div>
+    <div class="hand-flow">
+      <div class="node"><span class="mono small" style="color:var(--accent)">ваша команда</span><b class="h3">Автор · медиакоманда</b><small>отклик → диалог → отношения</small></div>
+      <svg class="bridge" viewBox="0 0 120 80" aria-hidden="true"><line x1="4" y1="40" x2="116" y2="40" stroke="var(--accent)" stroke-width="2" opacity=".6"/><path d="M30 40 Q60 12 90 40" stroke="var(--lamp)" stroke-width="3.5" fill="none" stroke-linecap="round"/><circle cx="60" cy="26" r="5" fill="var(--lamp)"/></svg>
+      <div class="node"><span class="mono small" style="color:var(--lamp)">рядом с человеком</span><b class="h3">Принимающая команда</b><small>встреча · группа · община</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="privacy">
+  <div class="wrap grid2" style="align-items:start">
+    <div class="stack">
+      <p class="eyebrow">Приватность и доверие</p>
+      <h2 class="h2">Данные о людях — это ответственность</h2>
+      <p class="lead">Каждая команда работает в своём изолированном пространстве. Доступ — по ролям, согласия записываются, данные можно выгрузить или удалить.</p>
+      <div class="row" style="margin-top:8px"><span class="pill hi">изоляция команд</span><span class="pill hi">доступ по ролям</span><span class="pill hi">журнал согласий</span><span class="pill hi">экспорт и удаление</span></div>
+    </div>
+    <div class="card feat" style="padding:32px">
+      <p class="eyebrow">Чего в системе не будет</p>
+      <ul class="no" style="padding:0;margin:0">
+        <li>«Рейтинга духовности» и оценок людей</li>
+        <li>Скрытого профилирования и слежки</li>
+        <li>Продажи или обмена данными</li>
+        <li>Автоматических сообщений без участия человека</li>
+        <li>Передачи без согласия</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="light">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Для кого</p><h2 class="h2">Для тех, кто начинает медиаслужение</h2></div>
+    <div class="grid3" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+      <div class="card persona"><span class="n">01</span><h3 class="h3">Один автор</h3><p>Блогер или волонтёр, которому пишут больше людей, чем он успевает запомнить.</p></div>
+      <div class="card persona"><span class="n">02</span><h3 class="h3">Медиакоманда</h3><p>Несколько человек ведут каналы общины и хотят отвечать слаженно.</p></div>
+      <div class="card persona"><span class="n">03</span><h3 class="h3">Команда отклика</h3><p>Отвечают на сообщения после эфиров и видео, договариваются о встречах.</p></div>
+      <div class="card persona"><span class="n">04</span><h3 class="h3">Социальное служение</h3><p>Помогают людям и хотят не терять тех, кому нужна поддержка дальше.</p></div>
+      <div class="card persona"><span class="n">05</span><h3 class="h3">Сеть команд</h3><p>Несколько городов и общин передают людей друг другу.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="plans">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Тарифы · план</p><h2 class="h2">Начать можно одному</h2><p class="lead">Условия и цены появятся после пилота. Сейчас идёт ранний доступ.</p></div>
+    <div class="grid3">
+      <div class="card tier"><span class="price">Free</span><h3 class="h3">Для одного</h3><ul><li>Карточки людей и путь</li><li>Входящие из 1–2 каналов</li><li>Напоминания</li></ul></div>
+      <div class="card tier main"><span class="price">Team</span><h3 class="h3">Для команды</h3><ul><li>Роли и общая доска</li><li>Передача с согласием</li><li>AI-помощник</li><li>Модули интеграций</li></ul></div>
+      <div class="card tier"><span class="price">Network</span><h3 class="h3">Для сети</h3><ul><li>Несколько команд и городов</li><li>Маршруты передачи между командами</li><li>Сводная аналитика без персональных данных</li></ul></div>
+    </div>
+    <div class="dog" style="margin-top:48px">
+      <span class="mk" data-size="64"></span>
+      <p class="lead" style="max-width:70ch"><b style="color:inherit">Сначала — на себе.</b> Команда KINOR первой работает в системе: отклики после медиаконференции и проектов проходят тот же путь, что увидят другие команды.</p>
+    </div>
+  </div>
+</section>
+
+<section class="light faq-sec">
+  <div class="wrap grid2" style="align-items:start">
+    <div class="sec-head"><p class="eyebrow">Вопросы</p><h2 class="h2">Коротко о главном</h2></div>
+    <div class="faq">
+      <details open><summary>Это CRM для продаж?</summary><p class="muted">Нет. В центре не сделка, а человек и отношения с ним. Воронка заменена путём, который человек проходит по своему желанию.</p></details>
+      <details><summary>Нужна ли большая команда?</summary><p class="muted">Нет. Система задумана для одного автора и небольших команд: начать можно за вечер.</p></details>
+      <details><summary>Что делает AI?</summary><p class="muted">Готовит черновики, резюме и напоминания. Любое сообщение отправляет и любое решение принимает человек.</p></details>
+      <details><summary>Когда можно попробовать?</summary><p class="muted">Идёт подготовка пилота. Оставьте заявку — мы напишем, когда появятся места.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="dark rel" id="access">
+  <canvas class="strings" data-gap="30" data-warm=".8" data-op=".45" data-min=".04" data-amp="6"></canvas>
+  <div class="wrap grid2" style="align-items:center">
+    <div class="stack"><p class="eyebrow">Ранний доступ</p><h2 class="h2">Станьте одной из первых команд</h2><p class="lead">Расскажите немного о себе — пригласим в пилот, когда он откроется.</p></div>
+    <form class="form" data-demo>
+      <label class="field">Имя<input name="name" autocomplete="name"></label>
+      <label class="field">Email<input type="email" name="email" required autocomplete="email"></label>
+      <label class="field">Кто вы<select name="role"><option>Автор или волонтёр</option><option>Медиакоманда</option><option>Команда отклика</option><option>Социальное служение</option><option>Сеть команд</option></select></label>
+      <label class="field">Размер команды<select name="size"><option>Только я</option><option>2–5</option><option>6–15</option><option>Больше 15</option></select></label>
+      <label class="chk full"><input type="checkbox" required> Согласен получить письмо о пилоте. Данные используются только для этого.</label>
+      <div class="full row"><button class="btn btn-primary" type="submit">Оставить заявку</button><span class="note">Концепт: форма ничего не отправляет.</span></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="k-footer">
+  <div class="wrap">
+    <div class="fam">
+      <a href="../media/"><span class="dot" style="background:#C9D4D2"></span>KINOR.MEDIA</a>
+      <a href="https://kinor.live/"><span class="dot" style="background:#37C4AA"></span>Радио Кинор</a>
+      <a href="../conf26/"><span class="dot" style="background:#8FB9CC"></span>Медиаконференция</a>
+      <a href="../"><span class="dot" style="background:var(--accent)"></span>Kinor Labs</a>
+    </div>
+    <div class="bottom"><span>© KINOR · Kinor Relationship OS — рабочее название</span><span class="mono">design concept · 17.09.2026</span></div>
+  </div>
+</footer>
+
+<script src="../assets/kinor-strings.js"></script>
+<script>
+// hero demo: the person moves along the path; warm fret = where they are now
+(() => {
+  const st = [...document.querySelectorAll('#stages .stg')], prog = document.getElementById('prog'), name = document.getElementById('stageName');
+  const labels = ['Замечен','Вовлечён','Откликнулся','Диалог','Отношения','Следующий шаг','Передача'];
+  let i = 3;
+  const set = () => { st.forEach((s, j) => { s.classList.toggle('done', j < i); s.classList.toggle('now', j === i); });
+    const w = st[i].offsetLeft; prog.style.width = Math.max(0, w) + 'px'; name.textContent = labels[i]; };
+  set(); addEventListener('resize', set);
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !location.search.includes('still'))
+    setInterval(() => { i = i >= 6 ? 2 : i + 1; set(); }, 2600);
+})();
+</script>
+</body>
+</html>

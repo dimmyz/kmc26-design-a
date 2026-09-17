@@ -3,6 +3,7 @@
    body.skin-media  → KINOR.MEDIA      · «Серебро» · calm editorial parent
    body.skin-conf   → Конференция 2026 · «Туман»   · event, dark-first
    body.skin-school → Медиашкола       · «Олива»   · learning, light-first
+   body.skin-labs / .skin-graphite → Kinor Labs · Relationship OS (dark product skins)
    Design concept v1.0 · 2026-09-17 · not production
    ========================================================================== */
 :root{
@@ -28,6 +29,11 @@
 .skin-violet{ --accent:#A7A3FF; --accent-ink:#5147C7; --light:#F4F2EE; --light-2:#E9E6F3; --r-card:24px; }  /* «Фиалка»: light-first like Olive */
 .skin-solar { --night:#002B36; --deep:#073642; --surface:#0A3A47; --accent:#4FA3E3; --accent-ink:#1F6FB2;
               --light:#FDF6E3; --light-2:#EEE8D5; --lamp-ink:#B58900; --ink:#073642; --ink-2:#586E75; --r-card:22px; } /* «Солярис»: Solarized-inspired paper */
+.skin-labs  { --night:#0C0F1E; --deep:#181C36; --surface:#13172B; --accent:#A7A3FF; --accent-ink:#5147C7;
+              --light:#F4F2EE; --light-2:#E9E6F3; --r-card:20px; }   /* «Индиго-ночь»: Kinor Labs / Relationship OS, dark */
+.skin-graphite{ --night:#0F1412; --deep:#1B2320; --surface:#161D1A; --accent:#C4E86B; --accent-ink:#55692F;
+              --light:#F1F2EA; --light-2:#E4E8D6; --r-card:20px; }   /* «Графит»: product/dev tools, dark */
+.skin-labs,.skin-graphite{background:var(--night);color:var(--on-dark)}
 .skin-sky{background:var(--night);color:var(--on-dark)}
 
 *{box-sizing:border-box}

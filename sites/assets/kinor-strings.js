@@ -52,11 +52,23 @@
     }
     size(); addEventListener('resize', size);
     plucks.push({ i: k, a: 16, t0: performance.now() - 500 });
-    if (live) {
-      setInterval(() => { plucks.push({ i: k, a: 14, t0: performance.now() }); if (plucks.length > 5) plucks.shift(); }, 4600);
-      c.parentElement.addEventListener('pointermove', e => { const i = Math.round((e.clientX - c.getBoundingClientRect().left) / gap); if (!plucks.length || plucks[plucks.length-1].i !== i) { plucks.push({ i, a: 5, t0: performance.now() }); if (plucks.length > 5) plucks.shift(); } });
-      requestAnimationFrame(draw);
-    } else draw(performance.now());
+
+    // one frame loop; runs while the canvas is on screen and the tab is visible
+    let running = false, onScreen = true, until = 0;
+    const frame = t => { draw(t); if (running && (live || t < until)) requestAnimationFrame(frame); else { running = false; draw(performance.now()); } };
+    const run = ms => { if (ms) until = Math.max(until, performance.now() + ms); if (running || !onScreen || document.hidden) return; running = true; requestAnimationFrame(frame); };
+    const pluck = (i, a, ms) => { plucks.push({ i, a, t0: performance.now() }); if (plucks.length > 5) plucks.shift(); run(ms); };
+
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; if (onScreen) run(); }, { threshold: 0 }).observe(c);
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) run(); });
+
+    // touch and mouse: a tap always answers, even under reduced motion (short, user-initiated)
+    const at = e => Math.round((e.clientX - c.getBoundingClientRect().left) / gap);
+    const host = c.parentElement;
+    host.addEventListener('pointerdown', e => pluck(at(e), 13, 1600), { passive: true });
+    host.addEventListener('pointermove', e => { if (e.pointerType !== 'touch' || e.pressure > 0) { const i = at(e); if (!plucks.length || plucks[plucks.length - 1].i !== i) pluck(i, 5, 1200); } }, { passive: true });
+
+    if (live) { setInterval(() => pluck(k, 14, 0), 4600); run(); } else draw(performance.now());
   });
 
   // Demo forms: never send data
